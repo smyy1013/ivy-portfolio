@@ -35,6 +35,15 @@ export type Story = {
   paragraphs: { text: string; quote: boolean }[];
 };
 
+/** One entry in the "Beyond the Bench" section: a trade show, event, or outreach. */
+export type Happening = {
+  title: string;
+  /** The line under the title, such as "Chicago, IL · Sep 2026". */
+  meta: string;
+  images: CopyImage[];
+  paragraphs: string[];
+};
+
 export type Copy = {
   hero: {
     headline: string;
@@ -49,6 +58,8 @@ export type Copy = {
   };
   work: { title: string; groups: ProjectGroup[] };
   how: { title: string; stories: Story[] };
+  /** Optional section between How I Work and the contact block. */
+  beyond: { title: string; intro: string | null; entries: Happening[] } | null;
   contact: {
     title: string;
     headline: string;
@@ -153,7 +164,10 @@ function parse(source: string): Copy {
   const hero = find(0, "Hero");
   const work = find(1, "What I Build");
   const how = find(2, "How I Work");
-  const contact = find(3, "Let's Build Something");
+  // The last section is always the contact block. Anything between How I Work
+  // and it is the optional "Beyond the Bench" section.
+  const contact = find(sections.length - 1 >= 3 ? sections.length - 1 : 3, "Let's Build Something");
+  const extra = sections.length >= 5 ? sections[3] : null;
 
   return {
     hero: {
@@ -182,6 +196,25 @@ function parse(source: string): Copy {
         })),
       })),
     },
+    beyond: extra
+      ? {
+          title: extra.title,
+          intro:
+            paragraphs(extra.body.split(/^### /m)[0]).find((text) => !text.startsWith(">")) ??
+            null,
+          entries: splitBy(extra.body, "###").map((entry) => {
+            const lines = entry.body.split("\n");
+            const meta = lines.find((line) => line.trim())?.trim() ?? "";
+            const rest = lines.slice(lines.findIndex((line) => line.trim()) + 1).join("\n");
+            return {
+              title: entry.title,
+              meta: IMAGE.test(meta) ? "" : meta,
+              images: lines.map((line) => image(line)).filter((pic): pic is CopyImage => pic !== null),
+              paragraphs: paragraphs(IMAGE.test(meta) ? entry.body : rest),
+            };
+          }),
+        }
+      : null,
     contact: {
       title: contact.title,
       headline: field(contact.body, "Headline", contact.title),

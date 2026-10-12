@@ -1,14 +1,20 @@
 import Link from "next/link";
 import { site } from "@/content/site";
+import { getCopy } from "@/lib/copy";
 
-const links = [
-  { href: "#work", label: "Projects" },
-  { href: "#how", label: "How I Work" },
-  { href: "#contact", label: "Contact" },
-];
+function sectionLinks() {
+  const { beyond } = getCopy();
+  return [
+    { href: "#work", label: "Projects" },
+    { href: "#how", label: "How I Work" },
+    ...(beyond && beyond.entries.length ? [{ href: "#beyond", label: beyond.title }] : []),
+    { href: "#contact", label: "Contact" },
+  ];
+}
 
 /** On the home page the logo scrolls to the top; on project pages it links home. */
 export function SiteHeader({ home = true }: { home?: boolean }) {
+  const links = sectionLinks();
   const logo = (
     <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden>
       <rect width="40" height="40" fill="none" stroke="var(--color-accent)" strokeWidth="1" />

@@ -41,7 +41,8 @@ export async function ProcessStage({
   const chart = !panoramic && images.some(isDiagram);
   // Several pictures sit two to a row. Each keeps its own shape and is never cropped:
   // widths are shared out by aspect ratio, which makes the pair the same height.
-  const shape = (ratio: number | null) => Math.min(Math.max(ratio ?? 4 / 3, 0.5), 2);
+  // Tall photos are shown no taller than 3:4 so a pair never towers over the text.
+  const shape = (ratio: number | null) => Math.min(Math.max(ratio ?? 4 / 3, 0.75), 2);
   const rows: (typeof images)[] = [];
   for (let at = 0; at < images.length; at += 2) rows.push(images.slice(at, at + 2));
 
