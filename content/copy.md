@@ -18,58 +18,6 @@
 
 ## Internships
 
-### Automatic sand dispenser
-Littelfuse, Engineering Intern · May to Aug 2026
-
-![Sand flowing from the dispensing tip into the 3D-printed fixture](images/dispense-cover.jpg)
-
-**Result:** Fill time reduced by 37% while maintaining fill weight.
-
-**Tools:** Autodesk Inventor, 3D Printing, Pneumatics, Arduino Opta PLC, Load Cell, FEA
-
-1. **Problem.** Sand fills many electrical fuses. When a fuse operates, the sand absorbs the heat of the arc and helps extinguish it, so consistent packing is important to fuse performance. The existing gravity-fed process was slow, ran one fuse at a time, and required fixture changes between fuse types. The objective was to find a more efficient dispensing method while maintaining consistent filling and compaction.
-   ![CMV sand-fill machine](images/dispense-1-problem.jpg)
-   ![8-station sand-fill station](images/dispense-1-station.jpg)
-2. **Thinking.** The initial assumption was that faster filling required more dispensing force. Testing the first concept showed otherwise. The nozzle opening was already large enough for sand to pass, so force was not the limiting factor. The design therefore shifted from dispensing force to air-assisted gravity dispensing.
-3. **Build.** The first prototype was a pneumatic piston metering chamber with a target volume accuracy of ±5%. The abrasive sand wore the piston, cylinder, and seals, with noticeable degradation after approximately 7 trials, and the concept was abandoned. The second build was a 3D-printed fixture with interchangeable dispensing tips, which allowed each variable to be tested independently.
-   ![CAD of the fuse fixture from the initial concept](images/dispense-2-build.jpg)
-   ![Initial experimental setup: the piston-based metering chamber on the 3D-printed fixture](images/dispense-2-piston.jpg)
-   ![CAD of a dispensing tip with its air-injection port](images/dispense-2-tip.png)
-4. **Test.** Three methods were compared over 15 trials each: gravity only, air injection, and air injection with a weighted block pressing on the sand. Tip geometry and vibration level were also tested. For each trial, fill time to a target height was taken from video and the fuse was weighed before and after. Compaction tapping was manual, which is a known source of variability.
-   ![Experimental setup: sand hopper, dispensing tip, and 3D-printed fixture](images/dispense-3-tune.jpg)
-5. **Result.** Air injection alone cut average fill time from 33.2 s to 21.8 s. Adding the weighted block brought it to 20.8 s, a 37% reduction, and also made fill time more consistent, with the spread dropping from 1.6 s to 1.0 s. Average fill weight stayed within about 1% (81.3 g to 82.3 g). Process settings are proprietary to Littelfuse and are not listed here.
-   ![Fill time for each method over 15 trials](images/dispense-4-chart.png)
-   ![Sand flow by gravity alone](images/dispense-4-gravity.jpg)
-   ![Sand flow with air assist](images/dispense-4-air.jpg)
-6. **Automation.** To run the process without an operator, delivered mass was selected as the control signal, since the fuse has to be weighed to verify the fill in any case. Unlike timing-based filling, the controller can stop when the target weight is reached. I programmed the fill sequence on an Arduino Opta PLC and read the load cell at 16-bit resolution, because a 12-bit reading across a multi-kilogram load cell resolves only about a gram per count, which is too coarse for a fill of under 100 g. The sequence ran successfully, and the hopper was checked under load using FEA. The hopper and other mechanical parts were not fully rebuilt before the internship ended, and the output circuit still needs fuses.
-   ![Control circuit: the load cell signal goes to the PLC, which switches the valves and the vibration motor](images/dispense-2-wiring.png)
-7. **Takeaway.** Better filling did not come from more mechanical force. Finding that out early shaped the rest of the project, and working within three months taught me how to define a scope that can be finished.
-
-### Lab and X-ray test fixtures
-Littelfuse, Engineering Intern · May to Aug 2026
-
-![Snap-fit quick-release rail on the X-ray fixture](images/lab-cover.jpg)
-
-**Result:** X-ray rail changeover reduced by 80%, from 60 s to 12 s.
-
-**Tools:** Autodesk Inventor, 3D Printing, 8020 Aluminum Extrusion, Snap-Fit Design
-
-1. **Problem.** Fuses in the Low Power Lab are tested for temperature rise under IEC and UL standards, vertically for one and horizontally for the other, and are then inspected by X-ray. The existing fixtures were product-specific. Technicians stacked blocks to set fuse height for UL tests, held cables with cable ties, and changed X-ray rails with a bolt and nut in five steps, about 60 seconds each time.
-   ![Blocks and cable ties in the old UL setup](images/lab-1-ul.jpg)
-   ![Screw adjustment on the old X-ray fixture](images/lab-1-xray.jpg)
-2. **Thinking.** Both fixtures needed to adjust without tools. For the lab fixture, the 8020 frame was kept, but the lower rack was made to slide and lock with clamping handles. For the X-ray rails, a toggle clamp strong enough would not fit the machine bed, so I borrowed the snap lock of a food container and chose a spherical snap fit, which engages and releases smoothly and spreads the load.
-   ![Spherical snap fit, from insertion to recovery](images/lab-2-snap.png)
-3. **Build.** All parts were 3D printed so each change could be tested within hours. The cable holder went through three versions, from open slots, to interchangeable snap-fit holders, to a single rotating insert with several cable sizes. Humid weather printed the T-slot features oversized, so the tolerances were adjusted over several prints. A snap-fit hinge kept fracturing and was dropped.
-   ![Lab fixture frames with sliding clamps](images/lab-3-clamps.jpg)
-   ![A clamping handle locks the lower rack in place](images/lab-3-handle.jpg)
-   ![Snap latch holding an X-ray rail to its base](images/lab-3-latch.jpg)
-   ![Three versions of the cable holder](images/lab-3-cable.png)
-4. **Test.** Lab technicians reviewed each version every week. Their feedback resized the snap fit, added holders for UL cables, and replaced a sliding blade-fuse spacer that did not grip firmly with a scissor linkage. X-ray changeover was timed over 10 trials.
-   ![Scissor-linkage spacers holding blade fuses](images/lab-3-blade.jpg)
-5. **Result.** X-ray rail changeover went from five steps to three, and from about 60 seconds to 12. One adjustable fixture now covers several fuse families and takes less storage space. A lever-driven mechanism for rotating fuses 90° in the X-ray was designed but not built.
-   ![The quick-release rail snapped onto the base](images/lab-5-release.jpg)
-6. **Takeaway.** The technicians who used the fixtures every day shaped the final design more than any CAD review. Meeting them weekly kept the project moving and showed me what to change next.
-
 ### Laser-labeling automation
 Littelfuse, Engineering Intern · May to Aug 2026
 
@@ -96,6 +44,57 @@ Littelfuse, Engineering Intern · May to Aug 2026
    ![Laser-labeled engineering samples in the fixture](images/label-5-samples.jpg)
    ![Sketch of how the fixture parts fit together](images/label-2-sketch.jpg)
 6. **Takeaway.** The most capable option is not always the right one. A tool that lab staff can maintain and extend after I leave was worth more than a more powerful script only I understood.
+
+### Lab and X-ray test fixtures
+Littelfuse, Engineering Intern · May to Aug 2026
+
+![Snap-fit quick-release rail on the X-ray fixture](images/lab-cover.jpg)
+
+**Result:** X-ray rail changeover reduced by 80%, from 60 s to 12 s.
+
+**Tools:** Autodesk Inventor, 3D Printing, 8020 Aluminum Extrusion, Snap-Fit Design
+
+1. **Problem.** Fuses in the Low Power Lab are tested for temperature rise under IEC and UL standards, vertically for one and horizontally for the other, and are then inspected by X-ray. The existing fixtures were product-specific. Technicians stacked blocks to set fuse height for UL tests, held cables with cable ties, and changed X-ray rails with a bolt and nut in five steps, about 60 seconds each time.
+   ![Blocks and cable ties in the old UL setup](images/lab-1-ul.jpg)
+   ![Screw adjustment on the old X-ray fixture](images/lab-1-xray.jpg)
+2. **Thinking.** Both fixtures needed to adjust without tools. For the lab fixture, the 8020 frame was kept, but the lower rack was made to slide and lock with clamping handles. For the X-ray rails, a toggle clamp strong enough would not fit the machine bed, so I borrowed the snap lock of a food container and chose a spherical snap fit, which engages and releases smoothly and spreads the load.
+   ![Spherical snap fit, from insertion to recovery](images/lab-2-snap.png)
+3. **Build.** All parts were 3D printed so each change could be tested within hours. The cable holder went through three versions, from open slots, to interchangeable snap-fit holders, to a single rotating insert with several cable sizes. Humid weather printed the T-slot features oversized, so the tolerances were adjusted over several prints. A snap-fit hinge kept fracturing and was dropped.
+   ![Lab fixture frames with sliding clamps](images/lab-3-clamps.jpg)
+   ![A clamping handle locks the lower rack in place](images/lab-3-handle.jpg)
+   ![Snap latch holding an X-ray rail to its base](images/lab-3-latch.jpg)
+   ![Three versions of the cable holder](images/lab-3-cable.png)
+4. **Test.** Lab technicians reviewed each version every week. Their feedback resized the snap fit, added holders for UL cables, and replaced a sliding blade-fuse spacer that did not grip firmly with a scissor linkage. X-ray changeover was timed over 10 trials.
+   ![Scissor-linkage spacers holding blade fuses](images/lab-3-blade.jpg)
+5. **Result.** X-ray rail changeover went from five steps to three, and from about 60 seconds to 12. One adjustable fixture now covers several fuse families and takes less storage space. A lever-driven mechanism for rotating fuses 90° in the X-ray was designed but not built.
+   ![The quick-release rail snapped onto the base](images/lab-5-release.jpg)
+6. **Takeaway.** The technicians who used the fixtures every day shaped the final design more than any CAD review. Meeting them weekly kept the project moving and showed me what to change next.
+
+### Automatic sand dispenser
+Littelfuse, Engineering Intern · May to Aug 2026
+
+![Sand flowing from the dispensing tip into the 3D-printed fixture](images/dispense-cover.jpg)
+
+**Result:** Fill time reduced by 37% while maintaining fill weight.
+
+**Tools:** Autodesk Inventor, 3D Printing, Pneumatics, Arduino Opta PLC, Load Cell, FEA
+
+1. **Problem.** Sand fills many electrical fuses. When a fuse operates, the sand absorbs the heat of the arc and helps extinguish it, so consistent packing is important to fuse performance. The existing gravity-fed process was slow, ran one fuse at a time, and required fixture changes between fuse types. The objective was to find a more efficient dispensing method while maintaining consistent filling and compaction.
+   ![CMV sand-fill machine](images/dispense-1-problem.jpg)
+   ![8-station sand-fill station](images/dispense-1-station.jpg)
+2. **Thinking.** The initial assumption was that faster filling required more dispensing force. Testing the first concept showed otherwise. The nozzle opening was already large enough for sand to pass, so force was not the limiting factor. The design therefore shifted from dispensing force to air-assisted gravity dispensing.
+3. **Build.** The first prototype was a pneumatic piston metering chamber with a target volume accuracy of ±5%. The abrasive sand wore the piston, cylinder, and seals, with noticeable degradation after approximately 7 trials, and the concept was abandoned. The second build was a 3D-printed fixture with interchangeable dispensing tips, which allowed each variable to be tested independently.
+   ![CAD of the fuse fixture from the initial concept](images/dispense-2-build.jpg)
+   ![Initial experimental setup: the piston-based metering chamber on the 3D-printed fixture](images/dispense-2-piston.jpg)
+   ![CAD of a dispensing tip with its air-injection port](images/dispense-2-tip.png)
+4. **Test.** Three methods were compared over 15 trials each: gravity only, air injection, and air injection with a weighted block pressing on the sand. Tip geometry and vibration level were also tested. For each trial, fill time to a target height was taken from video and the fuse was weighed before and after. Compaction tapping was manual, which is a known source of variability.
+   ![Experimental setup: sand hopper, dispensing tip, and 3D-printed fixture](images/dispense-3-tune.jpg)
+5. **Result.** Air injection alone cut average fill time from 33.2 s to 21.8 s. Adding the weighted block brought it to 20.8 s, a 37% reduction, and also made fill time more consistent, with the spread dropping from 1.6 s to 1.0 s. Average fill weight stayed within about 1% (81.3 g to 82.3 g). Process settings are proprietary to Littelfuse and are not listed here.
+   ![Sand flow by gravity alone](images/dispense-4-gravity.jpg)
+   ![Sand flow with air assist](images/dispense-4-air.jpg)
+6. **Automation.** To run the process without an operator, delivered mass was selected as the control signal, since the fuse has to be weighed to verify the fill in any case. Unlike timing-based filling, the controller can stop when the target weight is reached. I programmed the fill sequence on an Arduino Opta PLC and read the load cell at 16-bit resolution, because a 12-bit reading across a multi-kilogram load cell resolves only about a gram per count, which is too coarse for a fill of under 100 g. The sequence ran successfully, and the hopper was checked under load using FEA. The hopper and other mechanical parts were not fully rebuilt before the internship ended, and the output circuit still needs fuses.
+   ![Control circuit: the load cell signal goes to the PLC, which switches the valves and the vibration motor](images/dispense-2-wiring.png)
+7. **Takeaway.** Better filling did not come from more mechanical force. Finding that out early shaped the rest of the project, and working within three months taught me how to define a scope that can be finished.
 
 ### Hospital suction units
 Yuil Trading Corporation, Manufacturing Intern · Seoul, May to Aug 2025
