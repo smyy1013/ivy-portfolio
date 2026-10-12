@@ -1,0 +1,275 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   DESIGN TOKENS
+   Everything visual in the site resolves to a token defined here.
+   Change a brand color or a font once, and the whole site follows.
+   ========================================================================== */
+
+@theme inline {
+  /* Fonts are loaded in app/layout.tsx and exposed as CSS variables. */
+  --font-sans: var(--font-pretendard), "Pretendard Variable", Pretendard,
+    -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo",
+    "Noto Sans KR", "Malgun Gothic", sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, Menlo,
+    Consolas, monospace;
+}
+
+@theme {
+  /* --- Brand colors ------------------------------------------------------ */
+  --color-bg: #050505; /* page background */
+  --color-panel: #0d0d0f; /* cards, frames, image slots */
+  --color-ink: #ffffff; /* headings and primary text */
+  --color-muted: #8f8f8f; /* paragraph text (AA contrast on bg) */
+  --color-dim: #707070; /* outlines, inactive marks, quiet HUD text */
+  --color-accent: #00f5ff; /* signal cyan: the one brand accent */
+  --color-warning: #ff3e00; /* live tag, hover state, unfinished copy */
+  --color-line: rgb(255 255 255 / 0.07); /* borders and dividers */
+  --color-grid: rgb(255 255 255 / 0.03); /* background grid */
+
+  /* --- Layout ------------------------------------------------------------ */
+  --spacing-gutter: 1.25rem; /* page side padding, mobile */
+  --spacing-gutter-lg: 2.5rem; /* page side padding, desktop (40px) */
+  --spacing-section: 6.25rem; /* vertical section padding (100px) */
+  --container-frame: 62.5rem; /* contact frame (1000px) */
+
+  /* --- Motion ------------------------------------------------------------ */
+  --animate-pulse-live: pulse-live 2s infinite;
+
+  @keyframes pulse-live {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+}
+
+/* ==========================================================================
+   TYPE SCALE
+   Sans (Pretendard) carries headings and reading text.
+   Mono (JetBrains Mono) carries labels, metadata, and HUD readouts.
+   ========================================================================== */
+
+/* Section titles: "What I Build" */
+@utility type-display {
+  font-family: var(--font-sans);
+  font-size: clamp(2.75rem, 1.6rem + 5.6vw, 4.5rem);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+/* Hero name: "IVY YOON". Sized from the width of its column (cqi), so it
+   fills the column on one line whether that is 260px or 400px wide. */
+@utility type-hero {
+  font-family: var(--font-sans);
+  font-size: clamp(2.75rem, 20cqi, 6rem);
+  font-weight: 900;
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+/* Contact headline */
+@utility type-title {
+  font-family: var(--font-sans);
+  font-size: clamp(1.875rem, 1.1rem + 3.4vw, 3.5rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+/* Story titles in How I Work */
+@utility type-heading {
+  font-family: var(--font-sans);
+  font-size: clamp(1.5rem, 1.25rem + 1vw, 1.875rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+/* Project card titles */
+@utility type-card {
+  font-family: var(--font-sans);
+  font-size: clamp(1.125rem, 1rem + 0.6vw, 1.375rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+/* Reading text in sans */
+@utility type-body {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  line-height: 1.65;
+}
+
+/* Reading text in mono: hero subtitle, stories, contact body */
+@utility type-mono-body {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.8;
+}
+
+/* Group headers: "STUDENT TEAMS" */
+@utility type-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* Where and when: "LITTELFUSE, ENGINEERING INTERN · MAY TO AUG 2026" */
+@utility type-meta {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+/* Smallest HUD readouts and kickers: "SEC.02 // PROJECT_ARCHIVE" */
+@utility type-hud {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Hollow lettering used for the second word of a title */
+@utility text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--color-dim);
+}
+
+/* ==========================================================================
+   BASE
+   ========================================================================== */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-bg);
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    /* Korean text wraps at word boundaries instead of mid-word. */
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: var(--color-bg);
+  }
+
+  :focus-visible {
+    outline: 1px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+
+  summary {
+    list-style: none;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  /* The crosshair replaces the system cursor only on devices with a mouse,
+     and only after the Cursor component has mounted. */
+  @media (hover: hover) and (pointer: fine) {
+    html.hud-cursor,
+    html.hud-cursor * {
+      cursor: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* ==========================================================================
+   COMPONENT LAYOUTS
+   Grid layouts that are easier to read as named areas than as utilities.
+   ========================================================================== */
+
+@layer components {
+  /* Project card header: index, cover picture, text, toggle. */
+  .project-summary {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "index toggle"
+      "cover cover"
+      "text  text";
+    gap: 1rem 1.5rem;
+    align-items: start;
+    padding: 1.25rem;
+  }
+  .project-summary[data-cover="false"] {
+    grid-template-areas:
+      "index toggle"
+      "text  text";
+  }
+  .project-summary > [data-area="index"] {
+    grid-area: index;
+  }
+  .project-summary > [data-area="cover"] {
+    grid-area: cover;
+  }
+  .project-summary > [data-area="text"] {
+    grid-area: text;
+  }
+  .project-summary > [data-area="toggle"] {
+    grid-area: toggle;
+  }
+
+  @media (min-width: 48rem) {
+    .project-summary {
+      grid-template-columns: 3rem minmax(0, 15rem) minmax(0, 1fr) 2.5rem;
+      grid-template-areas: "index cover text toggle";
+      padding: 1.75rem 1.5rem;
+    }
+    .project-summary[data-cover="false"] {
+      grid-template-columns: 3rem minmax(0, 1fr) 2.5rem;
+      grid-template-areas: "index text toggle";
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .project-summary {
+      grid-template-columns: 3.5rem minmax(0, 20rem) minmax(0, 1fr) 2.5rem;
+    }
+  }
+
+  /* Unfinished copy such as "[term and year]" stays visible until it is filled in. */
+  .todo {
+    background: transparent;
+    color: var(--color-warning);
+    font-family: var(--font-mono);
+    font-size: 0.92em;
+  }
+}
