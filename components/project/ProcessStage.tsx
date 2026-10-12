@@ -90,7 +90,8 @@ export async function ProcessStage({
             // An empty slot stays small. A lone photo is kept from filling the column;
             // a lone diagram (PNG or SVG) keeps the full width so it stays readable.
             only && only.ratio === null && "sm:grid-cols-2",
-            only && only.url && !/\.(png|svg)(\?|$)/i.test(only.url) && "max-w-[22rem]",
+            only && only.url && !/\.(png|svg)(\?|$)/i.test(only.url) &&
+              ((only.ratio ?? 4 / 3) < 1 ? "max-w-[16rem]" : "max-w-[22rem]"),
           )}
         >
           {rows.map((row) => (
