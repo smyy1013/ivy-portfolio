@@ -4,7 +4,7 @@
 
 **Tagline:** Metal that moves. Signals that steer.
 
-**Role:** Mechanical engineering junior · UIUC | Electrical engineering minor
+**Role:** Mechanical engineering junior | Electrical engineering minor · UIUC
 
 **Subtitle:** The work I like most happens where a mechanism meets a sensor and a controller.
 
