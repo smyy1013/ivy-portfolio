@@ -34,9 +34,11 @@ Littelfuse, Engineering Intern · May to Aug 2026
 3. **Build.** The first prototype was a pneumatic piston metering chamber with a target volume accuracy of ±5%. The abrasive sand wore the piston, cylinder, and seals, with noticeable degradation after approximately 7 trials, and the concept was abandoned. The second build was a 3D-printed fixture with interchangeable dispensing tips, which allowed each variable to be tested independently.
    ![CAD of the fuse fixture from the initial concept](images/dispense-2-build.jpg)
    ![Initial experimental setup: the piston-based metering chamber on the 3D-printed fixture](images/dispense-2-piston.jpg)
-4. **Test.** Gravity-only and air-assisted filling were compared, along with tip geometry and vibration level. For each trial, fill time to a target height was taken from video and the fuse was weighed before and after. Compaction tapping was manual, which is a known source of variability.
+   ![CAD of a dispensing tip with its air-injection port](images/dispense-2-tip.png)
+4. **Test.** Three methods were compared over 15 trials each: gravity only, air injection, and air injection with a weighted block pressing on the sand. Tip geometry and vibration level were also tested. For each trial, fill time to a target height was taken from video and the fuse was weighed before and after. Compaction tapping was manual, which is a known source of variability.
    ![Experimental setup: sand hopper, dispensing tip, and 3D-printed fixture](images/dispense-3-tune.jpg)
-5. **Result.** Average fill time decreased from 33.2 s to 20.9 s, a 37% reduction, while fill weight was maintained within about 1%. Process settings are proprietary to Littelfuse and are not listed here.
+5. **Result.** Air injection alone cut average fill time from 33.2 s to 21.8 s. Adding the weighted block brought it to 20.8 s, a 37% reduction, and also made fill time more consistent, with the spread dropping from 1.6 s to 1.0 s. Average fill weight stayed within about 1% (81.3 g to 82.3 g). Process settings are proprietary to Littelfuse and are not listed here.
+   ![Fill time for each method over 15 trials](images/dispense-4-chart.png)
    ![Sand flow by gravity alone](images/dispense-4-gravity.jpg)
    ![Sand flow with air assist](images/dispense-4-air.jpg)
 6. **Automation.** To run the process without an operator, delivered mass was selected as the control signal, since the fuse has to be weighed to verify the fill in any case. Unlike timing-based filling, the controller can stop when the target weight is reached. I programmed the fill sequence on an Arduino Opta PLC and read the load cell at 16-bit resolution, because a 12-bit reading across a multi-kilogram load cell resolves only about a gram per count, which is too coarse for a fill of under 100 g. The sequence ran successfully, and the hopper was checked under load using FEA. The hopper and other mechanical parts were not fully rebuilt before the internship ended, and the output circuit still needs fuses.
@@ -80,9 +82,10 @@ Littelfuse, Engineering Intern · May to Aug 2026
 1. **Problem.** Every engineering sample needs a unique sample number and its ratings before testing. Labels were handwritten or entered into the laser software one by one, small fuses were hard to mark consistently, and each fuse family had its own laser fixture.
    ![One of the old single-family laser fixtures](images/label-1-old.jpg)
 2. **Thinking.** The work split into a fixture and a program. The laser software could not be scripted, and a separate scripting platform would have been harder to maintain, so I wrote an Excel VBA tool that prepares the data while template selection and job submission stay in the existing laser software.
-3. **Build.** The fixture holds several fuse families in one setup and was checked in Inventor FEA under loads applied at each slot. Triangular bridges and a flat middle support reduced the deflection seen over unsupported spans, and the part was split to fit the printer bed and printed in PETG, which is less brittle than PLA. The VBA tool checks every input, looks up fuse dimensions in a database, numbers the samples, and exports a CSV that the laser software reads through Dynamic Data.
+3. **Build.** The fixture holds several fuse families in one setup and was checked in Inventor FEA under loads applied at each slot. Triangular bridges and a flat middle support reduced the deflection seen over unsupported spans, and the part was split to fit the printer bed and printed in PETG, which is less brittle than PLA. The VBA tool walks the user through six questions on a step-by-step form, checks every input, finds the fuse family from its series, picks the label size from its current rating, numbers the samples, and exports a CSV that the laser software reads through Dynamic Data.
    ![Base plate sketch in Inventor](images/label-3-cad.jpg)
    ![Printed base plates, split to fit the printer bed](images/label-3-plates.jpg)
+   ![CAD of a side rail for 10x31 and 10x38 midget fuses](images/label-3-rail.png)
    ![FEA of the first fixture design](images/label-3-fea.png)
    ![FEA after adding triangular bridges](images/label-3-fea2.png)
    ![The Excel VBA input page](images/label-3-excel.png)
@@ -91,7 +94,6 @@ Littelfuse, Engineering Intern · May to Aug 2026
    ![Label from the rotary attachment test](images/label-4-rotary.jpg)
 5. **Result.** Labeling 100 samples takes about 30 minutes, similar to before, but it now runs unattended, so technicians spend that time on other work. Manual sample numbering is gone and labels are consistent. A waterjet-cut aluminum fixture was designed for a future version.
    ![Small fuses from several families loaded in one setup](images/label-5-multi.jpg)
-   ![Three engineering samples after labeling](images/label-5-engraved.jpg)
    ![Laser-labeled engineering samples in the fixture](images/label-5-samples.jpg)
    ![Sketch of how the fixture parts fit together](images/label-2-sketch.jpg)
 6. **Takeaway.** The most capable option is not always the right one. A tool that lab staff can maintain and extend after I leave was worth more than a more powerful script only I understood.
