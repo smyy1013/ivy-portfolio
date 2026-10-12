@@ -221,6 +221,19 @@ ASME and Koine Adaptive, Footplate Design · Sep 2024 to Mar 2026
    ![Riding the trike on a gravel trail](images/trike-4-ride.jpg)
 6. **Takeaway.** A part that holds up in analysis can still fail the person using it. I learned to start from the rider's comfort and to choose a joint that locks by shape over one that relies on friction.
 
+### UWB follow-me gym robot
+Student project with classmates · 2025
+
+**Result:** A four-wheel robot that drives on its own and steers around obstacles with a 2D LiDAR.
+
+**Tools:** Arduino, I2C Motor Driver, Wheel Encoders, 2D LiDAR, UWB, Raspberry Pi
+
+1. **Problem.** Moving between machines at the gym means carrying everything with you: bag, bottle, towel. The goal was a small robot that follows its user around the gym using UWB and carries those things.
+2. **Thinking.** The idea grew out of the autonomous wheelchair I built in high school, which used a Raspberry Pi for high-level decisions and an Arduino for low-level motor control. This time the robot had to follow a moving person instead of a fixed route, so UWB replaced the camera as the way to locate the target.
+3. **Build.** I assembled the four-wheel chassis and wired the four-channel motor driver. I wrote the Arduino code that sets each motor's speed over I2C and reads the wheel encoders, and I worked on obstacle detection with the 2D LiDAR.
+4. **Result.** The robot drove on its own and steered around obstacles in its path.
+5. **Takeaway.** The hard problems showed up after it worked. The wiring needed to be tidied, and the robot had to stay small enough not to block people in a busy gym. A 2D LiDAR only scans one flat slice, and from where it was mounted it could not see everything in front of the robot, so deciding where to put it and finding the blind spots was harder than getting it to move. Next time I would plan sensor placement and wiring before building the chassis.
+
 # How I Work
 
 ### The night I learned we could do it
