@@ -83,11 +83,10 @@ Littelfuse, Engineering Intern · May to Aug 2026
    ![One of the old single-family laser fixtures](images/label-1-old.jpg)
 2. **Thinking.** The work split into a fixture and a program. The laser software could not be scripted, and a separate scripting platform would have been harder to maintain, so I wrote an Excel VBA tool that prepares the data while template selection and job submission stay in the existing laser software.
 3. **Build.** The fixture holds several fuse families in one setup and was checked in Inventor FEA under loads applied at each slot. Triangular bridges and a flat middle support reduced the deflection seen over unsupported spans, and the part was split to fit the printer bed and printed in PETG, which is less brittle than PLA. The VBA tool walks the user through six questions on a step-by-step form, checks every input, finds the fuse family from its series, picks the label size from its current rating, numbers the samples, and exports a CSV that the laser software reads through Dynamic Data.
-   ![Base plate sketch in Inventor](images/label-3-cad.jpg)
-   ![Printed base plates, split to fit the printer bed](images/label-3-plates.jpg)
-   ![CAD of a side rail for 10x31 and 10x38 midget fuses](images/label-3-rail.png)
    ![FEA of the first fixture design](images/label-3-fea.png)
    ![FEA after adding triangular bridges](images/label-3-fea2.png)
+   ![CAD of a side rail for 10x31 and 10x38 midget fuses](images/label-3-rail.png)
+   ![Printed base plates, split to fit the printer bed](images/label-3-plates.jpg)
    ![The Excel VBA input page](images/label-3-excel.png)
 4. **Test.** Early simulations showed exaggerated deflection along one edge, which traced back to boundary conditions and contact detection rather than the design, and the setup was corrected before comparing iterations. A rotary attachment was also tested for round fuses, but it held fewer samples per run and needed extra hardware. I also engraved test samples at different laser settings to find the one that gave the clearest, most consistent marks.
    ![Test samples engraved at different laser settings](images/label-4-settings.jpg)
