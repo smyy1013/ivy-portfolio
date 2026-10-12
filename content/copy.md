@@ -1,6 +1,6 @@
 # Hero
 
-**Headline:** Ivy Yoon
+**Headline:** SOMIN IVY YOON
 
 **Tagline:** Metal that moves. Signals that steer.
 

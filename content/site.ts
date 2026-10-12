@@ -3,10 +3,10 @@
  * The words on the page live in content/copy.md.
  */
 export const site = {
-  name: "Ivy Yoon",
-  title: "Ivy Yoon | Mechanical + Embedded Systems",
+  name: "Somin Ivy Yoon",
+  title: "Somin Ivy Yoon | Mechanical + Embedded Systems",
   description:
-    "Ivy Yoon is a mechanical engineering junior with an electrical engineering minor at the University of Illinois Urbana-Champaign.",
+    "Somin Ivy Yoon is a mechanical engineering junior with an electrical engineering minor at the University of Illinois Urbana-Champaign.",
 
   /** Contact details, taken from the resume. */
   email: "ivyyoon2@illinois.edu",
