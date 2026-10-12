@@ -59,8 +59,13 @@ Littelfuse, Engineering Intern · May to Aug 2026
    ![Spherical snap fit, from insertion to recovery](images/lab-2-snap.png)
 3. **Build.** All parts were 3D printed so each change could be tested within hours. The cable holder went through three versions, from open slots, to interchangeable snap-fit holders, to a single rotating insert with several cable sizes. Humid weather printed the T-slot features oversized, so the tolerances were adjusted over several prints. A snap-fit hinge kept fracturing and was dropped.
    ![The adjustable lab test fixture](images/lab-3-frame.jpg)
+   ![Lab fixture frames with sliding clamps](images/lab-3-clamps.jpg)
+   ![A clamping handle locks the lower rack in place](images/lab-3-handle.jpg)
+   ![Snap latch holding an X-ray rail to its base](images/lab-3-latch.jpg)
+   ![Setting rail spacing on the X-ray fixture with a thumb screw](images/lab-3-knob.jpg)
    ![Three versions of the cable holder](images/lab-3-cable.png)
 4. **Test.** Lab technicians reviewed each version every week. Their feedback resized the snap fit, added holders for UL cables, and replaced a sliding blade-fuse spacer that did not grip firmly with a scissor linkage. X-ray changeover was timed over 10 trials.
+   ![Scissor-linkage spacer prototypes](images/lab-4-scissor.jpg)
    ![Scissor-linkage spacers holding blade fuses](images/lab-3-blade.jpg)
 5. **Result.** X-ray rail changeover went from five steps to three, and from about 60 seconds to 12. One adjustable fixture now covers several fuse families and takes less storage space. A lever-driven mechanism for rotating fuses 90° in the X-ray was designed but not built.
    ![The quick-release rail snapped onto the base](images/lab-5-release.jpg)
@@ -69,7 +74,7 @@ Littelfuse, Engineering Intern · May to Aug 2026
 ### Laser-labeling automation
 Littelfuse, Engineering Intern · May to Aug 2026
 
-![The printed labeling fixture on the laser bed](images/label-cover.jpg)
+![Engineering samples on the printed fixture under the laser head](images/label-cover.jpg)
 
 **Result:** 100 samples labeled in about 30 minutes, unattended.
 
@@ -78,13 +83,21 @@ Littelfuse, Engineering Intern · May to Aug 2026
 1. **Problem.** Every engineering sample needs a unique sample number and its ratings before testing. Labels were handwritten or entered into the laser software one by one, small fuses were hard to mark consistently, and each fuse family had its own laser fixture.
    ![One of the old single-family laser fixtures](images/label-1-old.jpg)
 2. **Thinking.** The work split into a fixture and a program. The laser software could not be scripted, and a separate scripting platform would have been harder to maintain, so I wrote an Excel VBA tool that prepares the data while template selection and job submission stay in the existing laser software.
+   ![Sketch of how the fixture parts fit together](images/label-2-sketch.jpg)
 3. **Build.** The fixture holds several fuse families in one setup and was checked in Inventor FEA under loads applied at each slot. Triangular bridges and a flat middle support reduced the deflection seen over unsupported spans, and the part was split to fit the printer bed and printed in PETG, which is less brittle than PLA. The VBA tool checks every input, looks up fuse dimensions in a database, numbers the samples, and exports a CSV that the laser software reads through Dynamic Data.
+   ![Base plate sketch in Inventor](images/label-3-cad.jpg)
+   ![Printed base plates, split to fit the printer bed](images/label-3-plates.jpg)
+   ![Two base plates pinned together edge to edge](images/label-3-pins.jpg)
+   ![Side rails with slots for different fuse sizes](images/label-3-rails.jpg)
    ![FEA of the first fixture design](images/label-3-fea.png)
    ![FEA after adding triangular bridges](images/label-3-fea2.png)
    ![The Excel VBA input page](images/label-3-excel.png)
-4. **Test.** Early simulations showed exaggerated deflection along one edge, which traced back to boundary conditions and contact detection rather than the design, and the setup was corrected before comparing iterations. A rotary attachment was also tested for round fuses, but it held fewer samples per run and needed extra hardware.
+4. **Test.** Early simulations showed exaggerated deflection along one edge, which traced back to boundary conditions and contact detection rather than the design, and the setup was corrected before comparing iterations. A rotary attachment was also tested for round fuses, but it held fewer samples per run and needed extra hardware. I also engraved test samples at different laser settings to find the one that gave the clearest, most consistent marks.
+   ![Test samples engraved at different laser settings](images/label-4-settings.jpg)
    ![Label from the rotary attachment test](images/label-4-rotary.jpg)
 5. **Result.** Labeling 100 samples takes about 30 minutes, similar to before, but it now runs unattended, so technicians spend that time on other work. Manual sample numbering is gone and labels are consistent. A waterjet-cut aluminum fixture was designed for a future version.
+   ![Small fuses from several families loaded in one setup](images/label-5-multi.jpg)
+   ![Three engineering samples after labeling](images/label-5-engraved.jpg)
    ![Laser-labeled engineering samples in the fixture](images/label-5-samples.jpg)
 6. **Takeaway.** The most capable option is not always the right one. A tool that lab staff can maintain and extend after I leave was worth more than a more powerful script only I understood.
 
