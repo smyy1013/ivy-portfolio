@@ -243,11 +243,9 @@ Student project with classmates · Sep 2024 to Jul 2025
 
 ![The Raspberry Pi warning about low voltage the night before the exhibit](images/work-eoh-night.jpg)
 
-I led the AI translation mask as a freshman, with no CAD, welding, or soldering background. Ten people had joined because I asked them to, and for most of the project I kept asking myself why I couldn't be a better lead.
+As a freshman with no CAD, welding, or soldering experience, I led a team of ten on the AI translation mask, and I often doubted I was the right lead. The night before Engineering Open House, our Raspberry Pi died. We found an old Raspberry Pi 1, rebuilt the system overnight from my backup, and took 1st place among 200+ exhibits.
 
-The night before Engineering Open House, our Raspberry Pi 4 died. Around 10 pm we tracked down a friend's old Raspberry Pi 1. I had backed up every script, so we rebuilt the system overnight on a board that ran at about one-eighth of the speed. It held up through the whole showcase, and we took 1st place in Visionary Impact among 200+ exhibits.
-
-I still remember the rush when the mask spoke its first translation on that borrowed board. It was the first time I believed it for real.
+I still remember the rush when the mask spoke its first translation on that borrowed board.
 
 > I can do this, and we can do this.
 
@@ -255,11 +253,7 @@ I still remember the rush when the mask spoke its first translation on that borr
 
 ![ASME Special Projects with our homecoming float](images/work-asme-float.jpg)
 
-I joined ASME with almost no engineering experience, so I know what it feels like to walk into a room where everyone else already seems to know how. That night showed me that a beginner can get there with the right people around her, and I wanted every new member to feel that same rush.
-
-As Director of Special Projects the following year, I oversaw 6 projects, from robotics to aeronautics, and recruited 70+ members through short presentations in core ME classes. In our weekly meetings, what I watched most closely was whether each new person had something real to build, not just a seat at the table. The best part of the job was seeing someone who arrived unsure start explaining their own design to others.
-
-I lead the shock logger on Baja the same way, and try to give every teammate a real piece of it to own.
+As ASME's Director of Special Projects, I oversaw 6 projects and recruited 70+ members, many of them new to engineering like I had been. What I watched most closely was whether each person had something real to build. I lead the shock logger on Baja the same way.
 
 > I want everyone I work with to have a night like that.
 
