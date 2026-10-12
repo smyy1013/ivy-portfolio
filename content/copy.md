@@ -59,12 +59,11 @@ Littelfuse, Engineering Intern · May to Aug 2026
 3. **Build.** The fixture holds several fuse families in one setup and was checked in Inventor FEA under loads applied at each slot. Triangular bridges and a flat middle support reduced the deflection seen over unsupported spans, and the part was split to fit the printer bed and printed in PETG, which is less brittle than PLA. The VBA tool walks the user through six questions on a step-by-step form, checks every input, finds the fuse family from its series, picks the label size from its current rating, numbers the samples, and exports a CSV that the laser software reads through Dynamic Data.
    ![FEA of the first fixture design](images/label-3-fea.png)
    ![FEA after adding triangular bridges](images/label-3-fea2.png)
-   ![CAD of a side rail for 10x31 and 10x38 midget fuses](images/label-3-rail.png)
    ![Printed base plates, split to fit the printer bed](images/label-3-plates.jpg)
    ![The Excel VBA input page](images/label-3-excel.png)
 4. **Test.** Early simulations showed exaggerated deflection along one edge, which traced back to boundary conditions and contact detection rather than the design, and the setup was corrected before comparing iterations. A rotary attachment was also tested for round fuses, but it held fewer samples per run and needed extra hardware. I also engraved test samples at different laser settings to find the one that gave the clearest, most consistent marks.
-   ![Test samples engraved at different laser settings](images/label-4-settings.jpg)
    ![Label from the rotary attachment test](images/label-4-rotary.jpg)
+   ![Test samples engraved at different laser settings](images/label-4-settings.jpg)
 5. **Result.** Labeling 100 samples takes about 30 minutes, similar to before, but it now runs unattended, so technicians spend that time on other work. Manual sample numbering is gone and labels are consistent. A waterjet-cut aluminum fixture was designed for a future version.
    ![Small fuses from several families loaded in one setup](images/label-5-multi.jpg)
    ![Laser-labeled engineering samples in the fixture](images/label-5-samples.jpg)
@@ -86,10 +85,10 @@ Littelfuse, Engineering Intern · May to Aug 2026
 2. **Thinking.** Both fixtures needed to adjust without tools. For the lab fixture, the 8020 frame was kept, but the lower rack was made to slide and lock with clamping handles. For the X-ray rails, a toggle clamp strong enough would not fit the machine bed, so I borrowed the snap lock of a food container and chose a spherical snap fit, which engages and releases smoothly and spreads the load.
    ![Spherical snap fit, from insertion to recovery](images/lab-2-snap.png)
 3. **Build.** All parts were 3D printed so each change could be tested within hours. The cable holder went through three versions, from open slots, to interchangeable snap-fit holders, to a single rotating insert with several cable sizes. Humid weather printed the T-slot features oversized, so the tolerances were adjusted over several prints. A snap-fit hinge kept fracturing and was dropped.
+   ![Three versions of the cable holder](images/lab-3-cable.png)
    ![Lab fixture frames with sliding clamps](images/lab-3-clamps.jpg)
    ![A clamping handle locks the lower rack in place](images/lab-3-handle.jpg)
    ![Snap latch holding an X-ray rail to its base](images/lab-3-latch.jpg)
-   ![Three versions of the cable holder](images/lab-3-cable.png)
 4. **Test.** Lab technicians reviewed each version every week. Their feedback resized the snap fit, added holders for UL cables, and replaced a sliding blade-fuse spacer that did not grip firmly with a scissor linkage. X-ray changeover was timed over 10 trials.
    ![Scissor-linkage spacers holding blade fuses](images/lab-3-blade.jpg)
 5. **Result.** X-ray rail changeover went from five steps to three, and from about 60 seconds to 12. One adjustable fixture now covers several fuse families and takes less storage space. A lever-driven mechanism for rotating fuses 90° in the X-ray was designed but not built.
@@ -215,8 +214,8 @@ ASME and Koine Adaptive, Footplate Design · Sep 2024 to Mar 2026
    ![Version 2 CAD, the inner rod with its pin holes and pedal mount](images/trike-2-cad.png)
    ![TIG welding practice](images/trike-2-weld.jpg)
 4. **Test.** The first version was checked in ANSYS under more than 10 static load cases for stress below yield and no slip at the adjustment. The second rod was sized by hand calculation against landing loads, then ridden by the founder before other riders tried it.
-   ![Version 2 under a rider's feet](images/trike-3-fit.jpg)
    ![Rod and pedals in the frame tube, with the pin holes visible](images/trike-2-rod.jpg)
+   ![Version 2 under a rider's feet](images/trike-3-fit.jpg)
 5. **Result.** The trike took 1st place in Most Industry Impact and 2nd place in Outstanding RSO among 200+ exhibits at UIUC Engineering Open House 2025. The second version adjusts in under 30 seconds. At a pilot demo with Ozark Adaptive Sports Association, wheelchair users found it easier to adjust and comfortable to ride.
    ![The team with the 1st place award at Engineering Open House 2025](images/trike-4-eoh.jpg)
    ![Riding the trike on a gravel trail](images/trike-4-ride.jpg)
