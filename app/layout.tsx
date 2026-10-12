@@ -22,8 +22,19 @@ const jetbrains = localFont({
 });
 
 export const metadata: Metadata = {
+  // Lets link previews (KakaoTalk, LinkedIn, iMessage) find the preview picture
+  // in app/opengraph-image.png by its full address.
+  metadataBase: new URL("https://ivyyoon.vercel.app"),
   title: site.title,
   description: site.description,
+  openGraph: {
+    title: site.title,
+    description: site.description,
+    url: "/",
+    siteName: site.name,
+    type: "website",
+  },
+  twitter: { card: "summary_large_image", title: site.title, description: site.description },
 };
 
 export const viewport: Viewport = {
