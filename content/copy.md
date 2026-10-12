@@ -187,6 +187,7 @@ American Society of Mechanical Engineers, Project Lead · Dec 2024 to Apr 2025
 
 1. **Problem.** When my family moved to Canada, my mother struggled with English. Translating on a phone meant taking it out in the middle of a conversation, which interrupted the flow, could feel impolite, and was slow. The objective was a light, wearable translator that reduces translation delay and is comfortable to wear.
 2. **Thinking.** A mask keeps both hands free. An acoustic chamber inside it reduces the wearer's own voice, so the listener hears mainly the translation, and a front display shows captions. A Raspberry Pi was chosen over a microcontroller for its built-in Wi-Fi, and Google Cloud for its wide language support.
+   ![Concept sketch: Raspberry Pi and audio adapter on the head strap, mic and speaker inside the mask, cooling slots on the sides](images/mask-2-sketch.png)
 3. **Build.** I led a team of 10 students in mask, electronics, and software groups on a $300 ASME budget. The mask was designed in CAD and 3D printed around a Raspberry Pi 4 with a microphone, speaker, TFT display, rotary encoder, and battery. We wrote the Python scripts that turn speech into translated text and audio through Google Cloud APIs, and designed the Streamlit interface that displays it. Running in the cloud over Wi-Fi, it supports more than 90 languages.
    ![Team members with the speaker, electronics, and display before assembly](images/mask-1-team.jpg)
    ![3D-printed mask frame with the display installed](images/mask-2-build.jpg)
@@ -213,6 +214,7 @@ ASME and Koine Adaptive, Footplate Design · Sep 2024 to Mar 2026
    ![Version 1 CAD, sheet metal foot buckets clamped to a steel bar](images/trike-1-v1.png)
    ![Version 2 CAD, the inner rod with its pin holes and pedal mount](images/trike-2-cad.png)
    ![TIG welding practice](images/trike-2-weld.jpg)
+   ![Sketch sizing the footplate and the Velcro foot strap](images/trike-1-sketch2.png)
 4. **Test.** The first version was checked in ANSYS under more than 10 static load cases for stress below yield and no slip at the adjustment. The second rod was sized by hand calculation against landing loads, then ridden by the founder before other riders tried it.
    ![Rod and pedals in the frame tube, with the pin holes visible](images/trike-2-rod.jpg)
    ![Version 2 under a rider's feet](images/trike-3-fit.jpg)
@@ -221,8 +223,8 @@ ASME and Koine Adaptive, Footplate Design · Sep 2024 to Mar 2026
    ![Riding the trike on a gravel trail](images/trike-4-ride.jpg)
 6. **Takeaway.** A part that holds up in analysis can still fail the person using it. I learned to start from the rider's comfort and to choose a joint that locks by shape over one that relies on friction.
 
-### UWB follow-me gym robot
-Student project with classmates · 2025
+### Follow-me gym robot
+Student project with classmates · Sep 2024 to Jul 2025
 
 **Result:** A four-wheel robot that drives on its own and steers around obstacles with a 2D LiDAR.
 
@@ -231,6 +233,7 @@ Student project with classmates · 2025
 1. **Problem.** Moving between machines at the gym means carrying everything with you: bag, bottle, towel. The goal was a small robot that follows its user around the gym using UWB and carries those things.
 2. **Thinking.** The idea grew out of the autonomous wheelchair I built in high school, which used a Raspberry Pi for high-level decisions and an Arduino for low-level motor control. This time the robot had to follow a moving person instead of a fixed route, so UWB replaced the camera as the way to locate the target.
 3. **Build.** I assembled the four-wheel chassis and wired the four-channel motor driver. I wrote the Arduino code that sets each motor's speed over I2C and reads the wheel encoders, and I worked on obstacle detection with the 2D LiDAR.
+   ![Top view of the chassis with the 2D LiDAR at the front, from the manufacturer drawing](images/gym-3-lidar.png)
 4. **Result.** The robot drove on its own and steered around obstacles in its path.
 5. **Takeaway.** The hard problems showed up after it worked. The wiring needed to be tidied, and the robot had to stay small enough not to block people in a busy gym. A 2D LiDAR only scans one flat slice, and from where it was mounted it could not see everything in front of the robot, so deciding where to put it and finding the blind spots was harder than getting it to move. Next time I would plan sensor placement and wiring before building the chassis.
 
