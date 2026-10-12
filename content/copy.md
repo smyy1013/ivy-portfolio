@@ -88,9 +88,8 @@ Littelfuse, Engineering Intern · May to Aug 2026
    ![Three versions of the cable holder](images/lab-3-cable.png)
    ![Lab fixture frames with sliding clamps](images/lab-3-clamps.jpg)
    ![A clamping handle locks the lower rack in place](images/lab-3-handle.jpg)
-   ![Snap latch holding an X-ray rail to its base](images/lab-3-latch.jpg)
-4. **Test.** Lab technicians reviewed each version every week. Their feedback resized the snap fit, added holders for UL cables, and replaced a sliding blade-fuse spacer that did not grip firmly with a scissor linkage. X-ray changeover was timed over 10 trials.
    ![Scissor-linkage spacers holding blade fuses](images/lab-3-blade.jpg)
+4. **Test.** Lab technicians reviewed each version every week. Their feedback resized the snap fit, added holders for UL cables, and replaced a sliding blade-fuse spacer that did not grip firmly with a scissor linkage. X-ray changeover was timed over 10 trials.
 5. **Result.** X-ray rail changeover went from five steps to three, and from about 60 seconds to 12. One adjustable fixture now covers several fuse families and takes less storage space. A lever-driven mechanism for rotating fuses 90° in the X-ray was designed but not built.
    ![The quick-release rail snapped onto the base](images/lab-5-release.jpg)
 6. **Takeaway.** The technicians who used the fixtures every day shaped the final design more than any CAD review. Meeting them weekly kept the project moving and showed me what to change next.
@@ -106,6 +105,7 @@ Yuil Trading Corporation, Manufacturing Intern · Seoul, May to Aug 2025
 
 1. **Problem.** Almost every step on the line was manual. Units were assembled and wired by hand, and they used mechanical gauges, which could be assembled wrong and could only be read by eye. Test results were written down on paper, and they varied from unit to unit.
 2. **Build.** I assembled housings and electronics for 250+ hospital suction units.
+   ![Suction units on the line, with control boards going in](images/yuil-1-line.jpg)
    ![Mounting brackets and ground wires laid out before assembly](images/yuil-1-brackets.jpg)
 3. **Test.** Each unit was tested to ISO 10079 for vacuum, free air flow, and leakage. I connected the pressure transmitters to a DAQ and wrote a Python pipeline that cleans the data, calculates suction flow rate from pressure, plots it, and flags units below 20 L/min. It handled 30+ units a day and caught units just under the limit that had usually been passed. About 1 to 2 units in 200 failed, 85% from assembly leaks and 15% from pumps.
 4. **Fix.** A hydraulic operating table had oil flowing back through its actuator. The actuator was traveling farther than it should have, past the support meant to stop it. I drew a support fixture in 2D AutoCAD and 3D printed it to fit between the table and the joint, so the actuator stopped where it should. The backflow stopped, and the table ran more reliably.
@@ -225,11 +225,13 @@ ASME and Koine Adaptive, Footplate Design · Sep 2024 to Mar 2026
 
 ### The night I learned we could do it
 
+![The Raspberry Pi warning about low voltage the night before the exhibit](images/work-eoh-night.jpg)
+
 I led the AI translation mask as a freshman with no CAD, welding, or soldering background, and for most of it I kept asking why I couldn't be a better lead. The night before Engineering Open House our Raspberry Pi died. A teammate found a replacement at 10 pm, I loaded the code I had backed up, and we took 1st place. That night was the first time I felt it for real: I can do this, and we can do this.
 
 ### Now I try to give others that moment
 
-![Building a hub-motor frame with ASME Special Projects](images/work-asme.jpg)
+![ASME Special Projects with our homecoming float](images/work-asme-float.jpg)
 
 As ASME's Director of Special Projects, I oversaw 6 projects and recruited 70+ members. What I watched most closely was whether each new person had something real to build, so they could have their own "we can do this."
 
