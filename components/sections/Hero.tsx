@@ -1,5 +1,5 @@
 import { HeroSchematic } from "@/components/hud/HeroSchematic";
-import { Button } from "@/components/ui";
+import { Button, RichText } from "@/components/ui";
 import { site } from "@/content/site";
 import { getCopy } from "@/lib/copy";
 import { SiteHeader } from "./SiteHeader";
@@ -28,7 +28,7 @@ export function Hero() {
             <p className="mt-8 text-xl font-semibold leading-snug text-ink">{hero.tagline}</p>
           ) : null}
           {hero.subtitle ? (
-            <p className="mt-3 max-w-[66ch] text-base leading-relaxed text-muted">{hero.subtitle}</p>
+            <p className="mt-3 max-w-[66ch] text-base leading-relaxed text-muted"><RichText text={hero.subtitle} /></p>
           ) : null}
           <div className="mt-10 flex flex-wrap gap-3">
             <Button href="#work">{hero.primary}</Button>

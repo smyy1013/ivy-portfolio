@@ -6,7 +6,7 @@
 
 **Role:** Mechanical engineering junior | Electrical engineering minor · UIUC
 
-**Subtitle:** I’m passionate about the intersection of mechanical and electrical systems, especially control systems, sensors, and automation. I enjoy being part of the whole process, from designing the mechanism to wiring the sensors, writing the control code, and testing it until it works reliably.
+**Subtitle:** My focus is on the intersection of mechanical and electrical systems, especially control systems, sensors, and automation. At my startup, Koine Adaptive, I lead the design of [RAINIER V1](/projects/hand-crank-hybrid-drivetrain-rainier-v1), a hand-crank hybrid drivetrain for adaptive trikes, with weekly design reviews at the Human Dynamics and Controls Lab. At Littelfuse, I developed an [air-assisted sand dispensing](/projects/automatic-sand-dispenser) method, automated [laser labeling](/projects/laser-labeling-automation), and built [tool-free test fixtures](/projects/lab-and-x-ray-test-fixtures) with the lab technicians. On campus, I lead the [shock travel logger](/projects/shock-travel-logger) for Off-Road Illini Baja SAE and design a [wheel speed sensor](/projects/wheel-speed-sensor) for Eco Illini Supermileage.
 
 **Primary button:** See What I've Built
 

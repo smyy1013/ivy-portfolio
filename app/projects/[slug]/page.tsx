@@ -2,22 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
-import { ProcessLegend } from "@/components/project/ProcessLegend";
 import { ProcessStage, isUnwritten } from "@/components/project/ProcessStage";
 import { SiteHeader } from "@/components/sections/SiteHeader";
-import {
-  Button,
-  ContactMenu,
-  GroupHeader,
-  ImageSlot,
-  Kicker,
-  RichText,
-} from "@/components/ui";
+import { ImageSlot, RichText } from "@/components/ui";
 import { site } from "@/content/site";
-import { getCopy, getProjects, projectHref, projectLabel } from "@/lib/copy";
+import { getProjects, projectHref, projectLabel } from "@/lib/copy";
 import { resolveImage } from "@/lib/images";
-
-const pad = (n: number) => String(n).padStart(2, "0");
 
 // One static page per project in content/copy.md.
 export function generateStaticParams() {
@@ -53,7 +43,6 @@ async function ProjectContent({
 }: Pick<PageProps<"/projects/[slug]">, "params">) {
   const { slug } = await params;
   const projects = getProjects();
-  const { contact } = getCopy();
   const index = projects.findIndex((item) => item.id === slug);
   if (index === -1) notFound();
 
@@ -68,110 +57,71 @@ async function ProjectContent({
   );
 
   return (
-    <main className="relative z-[5] px-gutter pb-24 sm:px-gutter-lg">
+    <main className="relative z-[5] mx-auto max-w-[1180px] px-gutter pb-24 sm:px-gutter-lg">
       <Link
         href={`/#${project.id}`}
-        className="type-hud inline-flex items-center gap-2 text-dim transition-colors hover:text-accent"
+        className="inline-flex items-center gap-2 text-sm text-dim transition-colors hover:text-accent"
       >
         <span aria-hidden>&larr;</span> All projects
       </Link>
 
-      {/* Outcome first: what it is, where and when, and the result */}
-      <header className="mt-10 grid gap-10 border-b border-line pb-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-end lg:gap-16">
-        <div>
-          <Kicker className="mb-5">{projectLabel(project)}</Kicker>
-          <h1 className="type-title">{project.title}</h1>
-          <p className="type-meta mt-5 text-dim">{project.meta}</p>
-
-          <div className="mt-10 border-l-2 border-accent pl-4">
-            <div className="type-hud mb-2 text-dim">Summary</div>
-            <p className="max-w-[52ch] text-lg leading-snug text-ink">
-              <RichText text={project.result} />
-            </p>
-          </div>
-
-          {project.tools.length > 0 ? (
-            <div className="mt-10 flex flex-wrap items-center gap-2">
-              <span className="type-hud mr-2 text-dim">Tools</span>
-              {project.tools.map((tool) => (
-                <span
-                  key={tool}
-                  className="border border-line px-2.5 py-1 font-mono text-[11px] text-muted"
-                >
-                  {tool}
-                </span>
-              ))}
-            </div>
-          ) : null}
-        </div>
+      <header className="mt-10 pb-12">
+        <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-accent">
+          {projectLabel(project)}
+        </p>
+        <h1 className="type-title mt-4">{project.title}</h1>
+        <p className="mt-4 text-sm text-dim">{project.meta}</p>
+        <p className="mt-8 max-w-[64ch] text-lg leading-relaxed text-ink">
+          <RichText text={project.result} />
+        </p>
+        {project.tools.length > 0 ? (
+          <p className="mt-5 max-w-[80ch] text-sm leading-relaxed text-dim">
+            {project.tools.join(" · ")}
+          </p>
+        ) : null}
 
         {showCover && project.cover ? (
           <ImageSlot
             src={project.cover.src}
             alt={project.cover.alt}
-            ratio="16 / 10"
+            ratio="16 / 9"
             priority
             original
-            sizes="(min-width: 1024px) 50vw, 100vw"
+            sizes="(min-width: 1180px) 1100px, 100vw"
+            className="mt-12"
           />
         ) : null}
       </header>
 
-      {/* The process, stage by stage */}
-      <section className="pt-14">
-        <GroupHeader>Process</GroupHeader>
-        <ProcessLegend className="mb-8" />
-        <ol className="border border-line bg-panel/60">
-          {stages.map((stage, stageIndex) => (
-            <ProcessStage
-              key={stage.label + stageIndex}
-              stage={stage}
-              number={stageIndex + 1}
-              last={stageIndex === stages.length - 1}
-            />
-          ))}
-        </ol>
-      </section>
+      <ol>
+        {stages.map((stage, stageIndex) => (
+          <ProcessStage key={stage.label + stageIndex} stage={stage} />
+        ))}
+      </ol>
 
-      {/* Previous and next project */}
       <nav
         aria-label="More projects"
-        className="mt-14 grid gap-3 sm:grid-cols-2"
+        className="mt-6 flex flex-col justify-between gap-6 border-t border-line pt-10 sm:flex-row"
       >
         {previous ? (
-          <Link
-            href={projectHref(previous)}
-            className="group border border-line bg-panel/60 p-5 transition-colors hover:border-accent sm:p-6"
-          >
-            <div className="type-hud mb-3 text-dim group-hover:text-accent">
-              &larr; {pad(previous.number)} Previous
+          <Link href={projectHref(previous)} className="group">
+            <div className="text-sm text-dim">&larr; Previous</div>
+            <div className="mt-1 text-lg font-semibold text-ink transition-colors group-hover:text-accent">
+              {previous.title}
             </div>
-            <div className="type-card">{previous.title}</div>
           </Link>
         ) : (
-          <span className="hidden sm:block" />
+          <span />
         )}
         {next ? (
-          <Link
-            href={projectHref(next)}
-            className="group border border-line bg-panel/60 p-5 text-right transition-colors hover:border-accent sm:p-6"
-          >
-            <div className="type-hud mb-3 text-dim group-hover:text-accent">
-              Next {pad(next.number)} &rarr;
+          <Link href={projectHref(next)} className="group sm:text-right">
+            <div className="text-sm text-dim">Next &rarr;</div>
+            <div className="mt-1 text-lg font-semibold text-ink transition-colors group-hover:text-accent">
+              {next.title}
             </div>
-            <div className="type-card">{next.title}</div>
           </Link>
         ) : null}
       </nav>
-
-      <div className="mt-14 flex flex-col gap-3 sm:flex-row">
-        <Button href="/#work">{contact.primary}</Button>
-        <ContactMenu
-          label={contact.secondary}
-          email={site.email}
-          linkedin={site.linkedin}
-        />
-      </div>
     </main>
   );
 }
