@@ -40,11 +40,8 @@ export function ProjectCard({ project }: { project: NumberedProject }) {
       <div data-area="text" className="min-w-0">
         <h4 className="type-card">{project.title}</h4>
         <p className="type-meta mt-2 text-dim">{project.meta}</p>
-        <p className="mt-4 flex flex-col gap-1.5 sm:flex-row sm:items-baseline sm:gap-3">
-          <span className="type-hud shrink-0 text-dim">Result</span>
-          <span className="max-w-[60ch] text-[15px] leading-snug text-accent">
-            <RichText text={project.result} />
-          </span>
+        <p className="mt-4 max-w-[70ch] text-[15px] leading-relaxed text-muted">
+          <RichText text={project.result} />
         </p>
       </div>
 

@@ -84,8 +84,8 @@ async function ProjectContent({
           <p className="type-meta mt-5 text-dim">{project.meta}</p>
 
           <div className="mt-10 border-l-2 border-accent pl-4">
-            <div className="type-hud mb-2 text-dim">Result</div>
-            <p className="max-w-[44ch] text-xl leading-snug text-accent">
+            <div className="type-hud mb-2 text-dim">Summary</div>
+            <p className="max-w-[52ch] text-lg leading-snug text-ink">
               <RichText text={project.result} />
             </p>
           </div>

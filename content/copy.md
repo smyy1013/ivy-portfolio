@@ -6,7 +6,7 @@
 
 **Role:** Mechanical engineering junior | Electrical engineering minor · UIUC
 
-**Subtitle:** The work I like most happens where a mechanism meets a sensor and a controller.
+**Subtitle:** I like taking a design from concept to working hardware, then testing it and refining it based on what I measure. I have done this on fuse and medical device production lines and on student teams building race car sensors, adaptive trikes, and robots.
 
 **Primary button:** See What I've Built
 
@@ -15,7 +15,7 @@
 # Experience
 
 ### Littelfuse
-Engineering Intern · May to Aug 2026
+Engineering Intern · May 2026 – Aug 2026
 - Cut fuse sand-fill time by 37% with air-assisted dispensing, tested over 45 timed trials, and programmed a load-cell-controlled fill sequence on an Arduino Opta PLC.
 - Cut X-ray fixture changeover from 60 s to 12 s with tool-free 3D-printed fixtures refined in weekly reviews with lab technicians.
 - Automated laser labeling with a multi-family fixture and an Excel VBA tool, so 100 samples are labeled unattended.
@@ -26,16 +26,16 @@ Research Lead, RAINIER V1 Drivetrain · In progress
 - Interviewed leaders at 15+ adaptive recreation programs, and designed and built a trike footplate that adjusts in under 30 seconds.
 
 ### Yuil Trading Corporation, Seoul
-Manufacturing Intern · May to Aug 2025
+Manufacturing Intern · May 2025 – Aug 2025
 - Built and tested 250+ hospital suction units to ISO 10079, and wrote a Python pipeline that caught units just under the 20 L/min limit.
 - Stopped oil backflow on a hydraulic operating table with a support fixture drawn in AutoCAD and 3D printed.
 
 ### Off-Road Illini Baja SAE
-Project Lead, Shock Travel Logger · May 2026 to present
+Project Lead, Shock Travel Logger · May 2026 – Present
 - Leading the mechanical, firmware, and data work on a four-corner shock logger sampled at 500 Hz through a 12-bit ADC.
 
 ### Eco Illini Supermileage
-Electrical and Body Teams · Aug 2026 to present
+Electrical and Body Teams · Aug 2026 – Present
 - Designing a KiCAD PCB and sensor mount for a magnetic wheel speed encoder.
 
 ### American Society of Mechanical Engineers
@@ -50,11 +50,11 @@ Director of Special Projects
 ## Internships
 
 ### Automatic sand dispenser
-Littelfuse, Engineering Intern · May to Aug 2026
+Littelfuse, Engineering Intern · May 2026 – Aug 2026
 
 ![Sand flowing from the dispensing tip into the 3D-printed fixture](images/dispense-cover.jpg)
 
-**Result:** Fill time reduced by 37% while maintaining fill weight.
+**Result:** Developed an air-assisted sand dispensing method that cut fuse fill time by 37% over 45 timed trials, and automated the fill with load-cell feedback on an Arduino Opta PLC.
 
 **Tools:** Autodesk Inventor, 3D Printing, Pneumatics, Arduino Opta PLC, Load Cell, FEA
 
@@ -76,11 +76,11 @@ Littelfuse, Engineering Intern · May to Aug 2026
 7. **Takeaway.** Faster filling did not come from more force. Learning that early shaped everything that followed, and the three-month timeline taught me to define a scope I could actually finish.
 
 ### Laser-labeling automation
-Littelfuse, Engineering Intern · May to Aug 2026
+Littelfuse, Engineering Intern · May 2026 – Aug 2026
 
 ![Engineering samples on the printed fixture under the laser head](images/label-cover.jpg)
 
-**Result:** 100 samples labeled in about 30 minutes, unattended.
+**Result:** Designed a 3D-printed laser fixture for several fuse families, checked in FEA, and an Excel VBA tool that labels 100 engineering samples unattended.
 
 **Tools:** Excel VBA, Autodesk Inventor FEA, 3D Printing, PETG, Trotec Ruby
 
@@ -102,11 +102,11 @@ Littelfuse, Engineering Intern · May to Aug 2026
 6. **Takeaway.** The most capable option is not always the right one. A tool the lab staff can maintain and extend after I leave was worth more than a more powerful script only I understood.
 
 ### Lab and X-ray test fixtures
-Littelfuse, Engineering Intern · May to Aug 2026
+Littelfuse, Engineering Intern · May 2026 – Aug 2026
 
 ![Snap-fit quick-release rail on the X-ray fixture](images/lab-cover.jpg)
 
-**Result:** X-ray rail changeover reduced by 80%, from 60 s to 12 s.
+**Result:** Designed tool-free 3D-printed test and X-ray fixtures with lab technicians, cutting X-ray rail changeover from 60 s to 12 s.
 
 **Tools:** Autodesk Inventor, 3D Printing, 8020 Aluminum Extrusion, Snap-Fit Design
 
@@ -126,11 +126,11 @@ Littelfuse, Engineering Intern · May to Aug 2026
 6. **Takeaway.** The technicians who used the fixtures every day shaped the final design more than any CAD review. Meeting them weekly kept the project moving and told me what to change next.
 
 ### Hospital equipment manufacturing
-Yuil Trading Corporation, Manufacturing Intern · Seoul, May to Aug 2025
+Yuil Trading Corporation, Manufacturing Intern · Seoul, May 2025 – Aug 2025
 
 ![Wiring a suction unit's control board by hand](images/yuil-cover.jpg)
 
-**Result:** 250+ units built and tested to ISO 10079, with test data analyzed by a Python pipeline instead of by hand.
+**Result:** Built and tested 250+ hospital suction units to ISO 10079, wrote a Python pipeline for flow-rate test data, and fixed oil backflow on an operating table with a printed support.
 
 **Tools:** Python, AutoCAD, 3D Printing, Pressure Transmitters, DAQ
 
@@ -148,7 +148,7 @@ Yuil Trading Corporation, Manufacturing Intern · Seoul, May to Aug 2025
 ### Hand-crank hybrid drivetrain (RAINIER V1)
 Human Dynamics and Controls Lab + Koine Adaptive · In progress
 
-**Result:** Drivetrain architecture set. Generator bench testing in progress.
+**Result:** Leading a modular series-hybrid hand-crank drivetrain for adaptive trikes, with a 48V bus, VESC field-oriented control, and CAN. Generator bench testing in progress.
 
 **Tools:** VESC (FOC Motor Control), CAN Bus, 48V Battery and BMS, Mid-Drive Motor, Generator Test Bench
 
@@ -162,11 +162,11 @@ Human Dynamics and Controls Lab + Koine Adaptive · In progress
 ## Student Teams
 
 ### Wheel speed sensor
-Eco Illini Supermileage · Aug 2026 to present
+Eco Illini Supermileage · Aug 2026 – Present
 
 ![KiCAD schematic of the wheel speed sensor board](images/eco-cover.png)
 
-**Result:** PCB and mount for a 14-bit magnetic encoder that reads wheel speed.
+**Result:** Designing a KiCAD PCB around an STM32 with isolated CAN, and a mount for a 14-bit magnetic encoder that reads wheel speed.
 
 **Tools:** KiCAD, STM32G0B1, MA732 Magnetic Angle Encoder, ISO1044 CAN Transceiver
 
@@ -186,11 +186,11 @@ Eco Illini Supermileage · Aug 2026 to present
    ![Weighing epoxy resin and hardener](images/eco-5-epoxy.jpg)
 
 ### Shock travel logger
-Off-Road Illini Baja SAE, Project Lead · May 2026 to present
+Off-Road Illini Baja SAE, Project Lead · May 2026 – Present
 
 ![The Off-Road Illini Baja car on a drive, seen from behind](images/baja-cover.jpg)
 
-**Result:** Shock travel logger for all four corners, designed around a 12-bit ADC sampled at 500 Hz.
+**Result:** Leading a four-corner shock travel logger with linear potentiometers, an ESP32-S3, and a 12-bit ADC at 500 Hz, so damper settings come from data instead of driver feel.
 
 **Tools:** Linear Potentiometers, ESP32-S3, MCP3208, CAN, C, Python, 3D Printing
 
@@ -208,11 +208,11 @@ Off-Road Illini Baja SAE, Project Lead · May 2026 to present
 8. **Result.** Results will come with logging and tuning on the car.
 
 ### AI translation mask
-American Society of Mechanical Engineers, Project Lead · Dec 2024 to Apr 2025
+American Society of Mechanical Engineers, Project Lead · Dec 2024 – Apr 2025
 
 ![A visitor trying on the mask at Engineering Open House](images/mask-cover.jpg)
 
-**Result:** Translation latency reduced by 24%. 1st place, Visionary Impact, among 200+ exhibits.
+**Result:** Led a 10-person team to build a wearable real-time translator on a Raspberry Pi and cut its latency by 24%. 1st Place, Visionary Impact, among 200+ exhibits.
 
 **Tools:** Raspberry Pi 4, Python, Google Cloud APIs, Streamlit, TFT Display, 3D Printing
 
@@ -230,11 +230,11 @@ American Society of Mechanical Engineers, Project Lead · Dec 2024 to Apr 2025
 6. **Takeaway.** The prototype was bulkier than planned and built on a tight budget, but it proved the concept, and it showed me that I could build something real and lead a team through it.
 
 ### Adaptive Gravel E-Trike
-ASME and Koine Adaptive, Footplate Design · Sep 2024 to Mar 2026
+ASME and Koine Adaptive, Footplate Design · Sep 2024 – Mar 2026
 
 ![The Adaptive Gravel E-Trike](images/trike-cover.jpg)
 
-**Result:** Footplate adjusts in under 30 seconds. 1st place, Most Industry Impact, among 200+ exhibits.
+**Result:** Designed and built a pin-locked trike footplate with CNC machining and TIG welding that adjusts in under 30 seconds. 1st Place, Most Industry Impact, among 200+ exhibits.
 
 **Tools:** CAD, ANSYS FEA, CNC Machining, TIG Welding, Sheet Metal Forming
 
@@ -255,9 +255,9 @@ ASME and Koine Adaptive, Footplate Design · Sep 2024 to Mar 2026
 6. **Takeaway.** A part that holds up in analysis can still fail the person using it. I learned to start from the rider's comfort and to choose a joint that locks by shape over one that relies on friction.
 
 ### Follow-me gym robot
-Student project with classmates · Sep 2024 to Jul 2025
+Student project with classmates · Sep 2024 – Jul 2025
 
-**Result:** A four-wheel robot that drives on its own and steers around obstacles with a 2D LiDAR.
+**Result:** Built a four-wheel robot with I2C motor control, wheel encoders, and 2D LiDAR obstacle avoidance, designed to follow its user with UWB.
 
 **Tools:** Arduino, I2C Motor Driver, Wheel Encoders, 2D LiDAR, UWB, Raspberry Pi
 
