@@ -12,6 +12,37 @@
 
 **Secondary button:** Download Resume
 
+# Experience
+
+### Littelfuse
+Engineering Intern · May to Aug 2026
+- Cut fuse sand-fill time by 37% with air-assisted dispensing, tested over 45 timed trials, and programmed a load-cell-controlled fill sequence on an Arduino Opta PLC.
+- Cut X-ray fixture changeover from 60 s to 12 s with tool-free 3D-printed fixtures refined in weekly reviews with lab technicians.
+- Automated laser labeling with a multi-family fixture and an Excel VBA tool, so 100 samples are labeled unattended.
+
+### Human Dynamics and Controls Lab and Koine Adaptive
+Research Lead, RAINIER V1 Drivetrain · In progress
+- Leading a series-hybrid hand-crank drivetrain for adaptive trikes, built around a 48V bus, VESC field-oriented control, and CAN, with weekly design reviews with Prof. Elizabeth Hsiao-Wecksler.
+- Interviewed leaders at 15+ adaptive recreation programs, and designed and built a trike footplate that adjusts in under 30 seconds.
+
+### Yuil Trading Corporation, Seoul
+Manufacturing Intern · May to Aug 2025
+- Built and tested 250+ hospital suction units to ISO 10079, and wrote a Python pipeline that caught units just under the 20 L/min limit.
+- Stopped oil backflow on a hydraulic operating table with a support fixture drawn in AutoCAD and 3D printed.
+
+### Off-Road Illini Baja SAE
+Project Lead, Shock Travel Logger · May 2026 to present
+- Leading the mechanical, firmware, and data work on a four-corner shock logger sampled at 500 Hz through a 12-bit ADC.
+
+### Eco Illini Supermileage
+Electrical and Body Teams · Aug 2026 to present
+- Designing a KiCAD PCB and sensor mount for a magnetic wheel speed encoder.
+
+### American Society of Mechanical Engineers
+Director of Special Projects
+- Oversaw 6 Engineering Open House projects and recruited 70+ members.
+- Led the AI translation mask team to 1st place in Visionary Impact among 200+ exhibits.
+
 # What I Build
 
 > Layout: each project is told as an engineering process. A stage is a numbered line, "1. **Label.** text", followed by zero or more pictures. Stages labelled Thinking, Trade-off, or Takeaway are highlighted as the reasoning behind the work.

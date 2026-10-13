@@ -44,6 +44,15 @@ export type Happening = {
   paragraphs: string[];
 };
 
+/** One role in the Experience section. */
+export type Role = {
+  org: string;
+  /** "Engineering Intern · May to Aug 2026" */
+  meta: string;
+  /** Lines in copy.md that start with "- ". */
+  points: string[];
+};
+
 export type Copy = {
   hero: {
     headline: string;
@@ -58,6 +67,8 @@ export type Copy = {
   };
   work: { title: string; groups: ProjectGroup[] };
   how: { title: string; stories: Story[] };
+  /** Optional "# Experience" section, shown right after the hero. */
+  experience: { title: string; roles: Role[] } | null;
   /** Optional section between How I Work and the contact block. */
   beyond: { title: string; intro: string | null; entries: Happening[] } | null;
   contact: {
@@ -161,13 +172,16 @@ function parse(source: string): Copy {
     return section;
   };
 
+  // Sections are found by title, so optional ones can come and go. The first
+  // section is always the hero and the last is always the contact block.
+  const named = (title: string) =>
+    sections.find((section) => section.title.toLowerCase() === title.toLowerCase()) ?? null;
   const hero = find(0, "Hero");
-  const work = find(1, "What I Build");
-  const how = find(2, "How I Work");
-  // The last section is always the contact block. Anything between How I Work
-  // and it is the optional "Beyond the Bench" section.
-  const contact = find(sections.length - 1 >= 3 ? sections.length - 1 : 3, "Let's Build Something");
-  const extra = sections.length >= 5 ? sections[3] : null;
+  const work = named("What I Build") ?? find(1, "What I Build");
+  const how = named("How I Work") ?? find(2, "How I Work");
+  const contact = find(sections.length - 1, "Let's Build Something");
+  const extra = named("Beyond the Bench");
+  const experienceSection = named("Experience");
 
   return {
     hero: {
@@ -196,6 +210,19 @@ function parse(source: string): Copy {
         })),
       })),
     },
+    experience: experienceSection
+      ? {
+          title: experienceSection.title,
+          roles: splitBy(experienceSection.body, "###").map((role) => {
+            const lines = role.body.split("\n").map((line) => line.trim()).filter(Boolean);
+            return {
+              org: role.title,
+              meta: lines.find((line) => !line.startsWith("- ")) ?? "",
+              points: lines.filter((line) => line.startsWith("- ")).map((line) => line.slice(2).trim()),
+            };
+          }),
+        }
+      : null,
     beyond: extra
       ? {
           title: extra.title,

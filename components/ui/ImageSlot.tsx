@@ -83,11 +83,6 @@ export function ImageSlot({
           </span>
         </div>
       )}
-      <span aria-hidden className="absolute left-0 top-0 size-2.5 border-l border-t border-accent" />
-      <span
-        aria-hidden
-        className="absolute bottom-0 right-0 size-2.5 border-b border-r border-accent"
-      />
     </div>
   );
 }

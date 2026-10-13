@@ -4,6 +4,8 @@
  */
 export function TitleSplit({ text }: { text: string }) {
   const words = text.trim().split(/\s+/);
+  // A one-word title stays solid so it can still be read.
+  if (words.length < 2) return <>{text}</>;
   const last = words.pop();
   return (
     <>

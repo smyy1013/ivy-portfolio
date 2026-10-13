@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { Backdrop } from "@/components/hud/Backdrop";
-import { Cursor } from "@/components/hud/Cursor";
 import { site } from "@/content/site";
 import "./globals.css";
 
@@ -47,7 +46,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" className={`${pretendard.variable} ${jetbrains.variable}`}>
       <body className="flex min-h-svh flex-col">
         <Backdrop />
-        <Cursor />
         {children}
       </body>
     </html>
