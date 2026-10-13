@@ -31,14 +31,14 @@ export const site = {
     /** Shown as a legend on each project page. */
     frame: ["Problem", "Thinking", "Build", "Test", "Result"],
     /** Stages that carry the reasoning. They are highlighted on the page. */
-    reasoning: ["thinking", "trade-off", "takeaway"],
+    reasoning: ["thinking", "tradeoff", "takeaway"],
     /** The question each stage answers, keyed by lower-case label. */
     questions: {
       problem: "What needed to change, and why did it matter?",
       thinking: "What did I work out before committing to a design?",
       design: "What did I decide before building?",
       build: "What did I make, and what was my part?",
-      "trade-off": "What did that choice cost?",
+      "tradeoff": "What did that choice cost?",
       signal: "Will the measurement survive the electronics?",
       test: "What did checking it change?",
       fix: "What did I change on the line?",
