@@ -87,8 +87,8 @@ async function ProjectContent({
             ratio="16 / 10"
             priority
             original
-            sizes="(min-width: 768px) 720px, 100vw"
-            className="mt-12 max-w-[720px]"
+            sizes="(min-width: 768px) 600px, 100vw"
+            className="mt-12 max-w-[600px]"
           />
         ) : null}
       </header>

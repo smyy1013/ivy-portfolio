@@ -23,8 +23,8 @@ export function HowIWork() {
                 src={story.image.src}
                 alt={story.image.alt}
                 ratio="16 / 9"
-                sizes="(min-width: 1024px) 520px, 100vw"
-                className="mb-7 max-w-[520px]"
+                sizes="(min-width: 1024px) 440px, 100vw"
+                className="mb-7 max-w-[440px]"
               />
             ) : null}
             {story.paragraphs.map((paragraph) => (
