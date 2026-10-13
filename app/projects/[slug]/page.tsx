@@ -14,7 +14,7 @@ import {
   RichText,
 } from "@/components/ui";
 import { site } from "@/content/site";
-import { getCopy, getProjects, projectHref } from "@/lib/copy";
+import { getCopy, getProjects, projectHref, projectLabel } from "@/lib/copy";
 import { resolveImage } from "@/lib/images";
 
 const pad = (n: number) => String(n).padStart(2, "0");
@@ -79,7 +79,7 @@ async function ProjectContent({
       {/* Outcome first: what it is, where and when, and the result */}
       <header className="mt-10 grid gap-10 border-b border-line pb-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-end lg:gap-16">
         <div>
-          <Kicker className="mb-5">{project.group}</Kicker>
+          <Kicker className="mb-5">{projectLabel(project)}</Kicker>
           <h1 className="type-title">{project.title}</h1>
           <p className="type-meta mt-5 text-dim">{project.meta}</p>
 

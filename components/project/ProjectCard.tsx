@@ -1,16 +1,26 @@
 import Link from "next/link";
 import { ImageSlot, RichText } from "@/components/ui";
 import { site } from "@/content/site";
-import { projectHref, type NumberedProject } from "@/lib/copy";
+import { projectHref, projectLabel, type NumberedProject } from "@/lib/copy";
 import { resolveImage } from "@/lib/images";
 
 const pad = (n: number) => String(n).padStart(2, "0");
+
+function KindTag({ label }: { label: string }) {
+  return (
+    <span className="mb-2.5 inline-block rounded-sm border border-line px-2 py-1 font-mono text-[10px] uppercase leading-snug tracking-[0.1em] text-accent">
+      {label}
+    </span>
+  );
+}
 
 /** Home-page card: the outcome at a glance, linking to the project's own page. */
 export function ProjectCard({ project }: { project: NumberedProject }) {
   const showCover = Boolean(
     project.cover && (resolveImage(project.cover.src) || site.showEmptySlots),
   );
+
+  const kind = projectLabel(project);
 
   return (
     <Link
@@ -38,6 +48,9 @@ export function ProjectCard({ project }: { project: NumberedProject }) {
       ) : null}
 
       <div data-area="text" className="min-w-0">
+        <div>
+          <KindTag label={kind} />
+        </div>
         <h4 className="type-card transition-colors group-hover:text-accent">{project.title}</h4>
         <p className="type-meta mt-2 text-dim">{project.meta}</p>
         <p className="mt-4 max-w-[70ch] text-[15px] leading-relaxed text-muted">

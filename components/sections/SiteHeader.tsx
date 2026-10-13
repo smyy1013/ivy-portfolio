@@ -3,9 +3,8 @@ import { site } from "@/content/site";
 import { getCopy } from "@/lib/copy";
 
 function sectionLinks() {
-  const { beyond, experience } = getCopy();
+  const { beyond } = getCopy();
   return [
-    ...(experience && experience.roles.length ? [{ href: "#experience", label: "Experience" }] : []),
     { href: "#work", label: "Projects" },
     { href: "#how", label: "How I Work" },
     ...(beyond && beyond.entries.length ? [{ href: "#beyond", label: beyond.title }] : []),

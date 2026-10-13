@@ -6,7 +6,7 @@
 
 **Role:** Mechanical engineering junior | Electrical engineering minor · UIUC
 
-**Subtitle:** I’m passionate about the intersection of mechanical and electrical systems, with a particular interest in control systems, sensors, and automation.
+**Subtitle:** I’m passionate about the intersection of mechanical and electrical systems, especially control systems, sensors, and automation. I enjoy being part of the whole process, from designing the mechanism to wiring the sensors, writing the control code, and testing it until it works reliably.
 
 **Primary button:** See What I've Built
 
@@ -50,7 +50,9 @@ Director of Special Projects
 ## Internships
 
 ### Automatic sand dispenser
-Littelfuse, Engineering Intern · May 2026 – Aug 2026
+Engineering Intern · May 2026 – Aug 2026
+
+**Org:** Littelfuse
 
 ![Sand flowing from the dispensing tip into the 3D-printed fixture](images/dispense-cover.jpg)
 
@@ -76,7 +78,9 @@ Littelfuse, Engineering Intern · May 2026 – Aug 2026
 7. **Takeaway.** Faster filling did not come from more force. Learning that early shaped everything that followed, and the three-month timeline taught me to define a scope I could actually finish.
 
 ### Laser-labeling automation
-Littelfuse, Engineering Intern · May 2026 – Aug 2026
+Engineering Intern · May 2026 – Aug 2026
+
+**Org:** Littelfuse
 
 ![Engineering samples on the printed fixture under the laser head](images/label-cover.jpg)
 
@@ -102,7 +106,9 @@ Littelfuse, Engineering Intern · May 2026 – Aug 2026
 6. **Takeaway.** The most capable option is not always the right one. A tool the lab staff can maintain and extend after I leave was worth more than a more powerful script only I understood.
 
 ### Lab and X-ray test fixtures
-Littelfuse, Engineering Intern · May 2026 – Aug 2026
+Engineering Intern · May 2026 – Aug 2026
+
+**Org:** Littelfuse
 
 ![Snap-fit quick-release rail on the X-ray fixture](images/lab-cover.jpg)
 
@@ -126,7 +132,9 @@ Littelfuse, Engineering Intern · May 2026 – Aug 2026
 6. **Takeaway.** The technicians who used the fixtures every day shaped the final design more than any CAD review. Meeting them weekly kept the project moving and told me what to change next.
 
 ### Hospital equipment manufacturing
-Yuil Trading Corporation, Manufacturing Intern · Seoul, May 2025 – Aug 2025
+Manufacturing Intern · Seoul, May 2025 – Aug 2025
+
+**Org:** Yuil Trading Corporation
 
 ![Wiring a suction unit's control board by hand](images/yuil-cover.jpg)
 
@@ -146,7 +154,9 @@ Yuil Trading Corporation, Manufacturing Intern · Seoul, May 2025 – Aug 2025
 ## Research & Startup
 
 ### Hand-crank hybrid drivetrain (RAINIER V1)
-Human Dynamics and Controls Lab + Koine Adaptive · In progress
+In progress
+
+**Org:** Human Dynamics and Controls Lab + Koine Adaptive
 
 **Result:** Leading a modular series-hybrid hand-crank drivetrain for adaptive trikes, with a 48V bus, VESC field-oriented control, and CAN. Generator bench testing in progress.
 
@@ -162,7 +172,9 @@ Human Dynamics and Controls Lab + Koine Adaptive · In progress
 ## Student Teams
 
 ### Wheel speed sensor
-Eco Illini Supermileage · Aug 2026 – Present
+Aug 2026 – Present
+
+**Org:** Eco Illini Supermileage
 
 ![KiCAD schematic of the wheel speed sensor board](images/eco-cover.png)
 
@@ -186,7 +198,9 @@ Eco Illini Supermileage · Aug 2026 – Present
    ![Weighing epoxy resin and hardener](images/eco-5-epoxy.jpg)
 
 ### Shock travel logger
-Off-Road Illini Baja SAE, Project Lead · May 2026 – Present
+Project Lead · May 2026 – Present
+
+**Org:** Off-Road Illini Baja SAE
 
 ![The Off-Road Illini Baja car on a drive, seen from behind](images/baja-cover.jpg)
 
@@ -208,7 +222,9 @@ Off-Road Illini Baja SAE, Project Lead · May 2026 – Present
 8. **Result.** Results will come with logging and tuning on the car.
 
 ### AI translation mask
-American Society of Mechanical Engineers, Project Lead · Dec 2024 – Apr 2025
+Project Lead · Dec 2024 – Apr 2025
+
+**Org:** ASME
 
 ![A visitor trying on the mask at Engineering Open House](images/mask-cover.jpg)
 
@@ -230,7 +246,9 @@ American Society of Mechanical Engineers, Project Lead · Dec 2024 – Apr 2025
 6. **Takeaway.** The prototype was bulkier than planned and built on a tight budget, but it proved the concept, and it showed me that I could build something real and lead a team through it.
 
 ### Adaptive Gravel E-Trike
-ASME and Koine Adaptive, Footplate Design · Sep 2024 – Mar 2026
+Footplate Design · Sep 2024 – Mar 2026
+
+**Org:** ASME + Koine Adaptive
 
 ![The Adaptive Gravel E-Trike](images/trike-cover.jpg)
 
@@ -255,7 +273,7 @@ ASME and Koine Adaptive, Footplate Design · Sep 2024 – Mar 2026
 6. **Takeaway.** A part that holds up in analysis can still fail the person using it. I learned to start from the rider's comfort and to choose a joint that locks by shape over one that relies on friction.
 
 ### Follow-me gym robot
-Student project with classmates · Sep 2024 – Jul 2025
+Built with classmates · Sep 2024 – Jul 2025
 
 **Result:** Built a four-wheel robot with I2C motor control, wheel encoders, and 2D LiDAR obstacle avoidance, designed to follow its user with UWB.
 

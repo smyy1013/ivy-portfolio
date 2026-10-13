@@ -20,6 +20,8 @@ export type Project = {
   id: string;
   title: string;
   meta: string;
+  /** Company, lab, or team, shown in the project label. */
+  org: string | null;
   cover: CopyImage | null;
   result: string;
   tools: string[];
@@ -154,6 +156,7 @@ function parseProject(title: string, body: string): Project {
     id: slug(title),
     title,
     meta,
+    org: optionalField(head, "Org"),
     cover: image(head),
     result: field(head, "Result", title),
     tools: (optionalField(head, "Tools") ?? "")
@@ -250,6 +253,19 @@ function parse(source: string): Copy {
       secondary: field(contact.body, "Secondary button", contact.title),
     },
   };
+}
+
+/** The label on a project: its kind plus the company, lab, or team. */
+export function projectLabel(project: { group: string; org: string | null }) {
+  const g = project.group.toLowerCase();
+  const kind = g.includes("intern")
+    ? "Internship"
+    : g.includes("research")
+      ? "Research"
+      : g.includes("team")
+        ? "Student Team"
+        : project.group;
+  return project.org ? `${kind} · ${project.org}` : kind;
 }
 
 /** Every project in page order, with its number (1 to 8) and the group it belongs to. */
