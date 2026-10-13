@@ -84,11 +84,11 @@ async function ProjectContent({
           <ImageSlot
             src={project.cover.src}
             alt={project.cover.alt}
-            ratio="16 / 9"
+            ratio="16 / 10"
             priority
             original
-            sizes="(min-width: 1180px) 1100px, 100vw"
-            className="mt-12"
+            sizes="(min-width: 768px) 720px, 100vw"
+            className="mt-12 max-w-[720px]"
           />
         ) : null}
       </header>

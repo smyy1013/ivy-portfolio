@@ -63,11 +63,11 @@ export async function ProcessStage({ stage }: { stage: Stage }) {
               // One photo stays modest; diagrams and groups get more room.
               only && only.url && !isDiagram(only)
                 ? (only.ratio ?? 4 / 3) < 1
-                  ? "max-w-[20rem]"
-                  : "max-w-[30rem]"
+                  ? "max-w-[15rem]"
+                  : "max-w-[24rem]"
                 : panoramic || chart
-                  ? "max-w-[760px]"
-                  : "max-w-[860px]",
+                  ? "max-w-[600px]"
+                  : "max-w-[620px]",
               only && only.ratio === null && "sm:grid-cols-2",
             )}
           >
@@ -88,7 +88,7 @@ export async function ProcessStage({ stage }: { stage: Stage }) {
                       src={image.src}
                       alt={image.alt}
                       ratio={String(shape(image.ratio))}
-                      sizes="(min-width: 1024px) 40vw, (min-width: 640px) 50vw, 100vw"
+                      sizes="(min-width: 1024px) 620px, (min-width: 640px) 50vw, 100vw"
                     />
                   );
                   const share = { flex: `${shape(image.ratio)} 1 0%` };
