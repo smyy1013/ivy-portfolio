@@ -6,7 +6,7 @@
 
 **Role:** Mechanical engineering junior | Electrical engineering minor · UIUC
 
-**Subtitle:** I like taking a design from concept to working hardware, then testing it and refining it based on what I measure. I have done this on fuse and medical device production lines and on student teams building race car sensors, adaptive trikes, and robots.
+**Subtitle:** I’m passionate about the intersection of mechanical and electrical systems, with a particular interest in control systems, sensors, and automation.
 
 **Primary button:** See What I've Built
 

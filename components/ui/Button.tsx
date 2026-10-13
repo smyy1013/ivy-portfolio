@@ -3,17 +3,12 @@ import { cn } from "@/lib/cn";
 
 type Variant = "primary" | "secondary";
 
-/**
- * The look of the one button in the system. Primary is a solid white plate with
- * a cyan edge; secondary is an outlined plate. Both slide right on hover.
- */
+/** Primary is a solid accent button; secondary is outlined. */
 export function buttonClass(variant: Variant = "primary", className?: string) {
   return cn(
-    "relative flex h-[54px] items-center border px-6 font-mono text-xs uppercase no-underline",
-    "transition-all duration-300 hover:translate-x-2.5 hover:border-accent",
-    "before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:transition-colors before:duration-300",
-    variant === "primary" && "border-transparent bg-ink text-bg before:bg-accent hover:bg-accent",
-    variant === "secondary" && "border-line bg-transparent text-ink before:bg-dim",
+    "inline-flex h-11 items-center rounded-md border px-5 text-sm font-semibold no-underline transition-colors",
+    variant === "primary" && "border-accent bg-accent text-white hover:bg-ink hover:border-ink",
+    variant === "secondary" && "border-line bg-transparent text-ink hover:border-ink",
     className,
   );
 }

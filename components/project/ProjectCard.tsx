@@ -16,7 +16,7 @@ export function ProjectCard({ project }: { project: NumberedProject }) {
     <Link
       id={project.id}
       href={projectHref(project)}
-      className="project-summary group mb-3 scroll-mt-6 border border-l-2 border-line bg-panel/60 transition-colors duration-300 hover:border-accent hover:border-l-accent"
+      className="project-summary group scroll-mt-6 border-b border-line transition-colors hover:bg-panel"
       data-cover={showCover}
     >
       <span
@@ -38,7 +38,7 @@ export function ProjectCard({ project }: { project: NumberedProject }) {
       ) : null}
 
       <div data-area="text" className="min-w-0">
-        <h4 className="type-card">{project.title}</h4>
+        <h4 className="type-card transition-colors group-hover:text-accent">{project.title}</h4>
         <p className="type-meta mt-2 text-dim">{project.meta}</p>
         <p className="mt-4 max-w-[70ch] text-[15px] leading-relaxed text-muted">
           <RichText text={project.result} />
@@ -48,7 +48,7 @@ export function ProjectCard({ project }: { project: NumberedProject }) {
       <span
         data-area="toggle"
         aria-hidden
-        className="text-center font-mono text-xl leading-none text-accent transition-transform duration-300 group-hover:translate-x-1.5"
+        className="text-center text-lg leading-none text-dim transition-colors group-hover:text-accent"
       >
         &rarr;
       </span>

@@ -113,9 +113,9 @@
 
 /* Reading text in mono: hero subtitle, stories, contact body */
 @utility type-mono-body {
-  font-family: var(--font-mono);
-  font-size: 0.8125rem;
-  line-height: 1.8;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.7;
 }
 
 /* Group headers: "STUDENT TEAMS" */
@@ -145,8 +145,7 @@
 
 /* Hollow lettering used for the second word of a title */
 @utility text-outline {
-  color: transparent;
-  -webkit-text-stroke: 1px var(--color-dim);
+  color: inherit;
 }
 
 /* ==========================================================================
@@ -227,7 +226,7 @@
       "text  text";
     gap: 1rem 1.5rem;
     align-items: start;
-    padding: 1.25rem;
+    padding: 1.5rem 0.75rem;
   }
   .project-summary[data-cover="false"] {
     grid-template-areas:
