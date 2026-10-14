@@ -67,6 +67,7 @@ Engineering Intern · May 2026 – Aug 2026
 3. **Build.** The first prototype was a pneumatic piston that metered sand by volume, aiming for ±5% accuracy. The abrasive sand wore down the piston, cylinder, and seals, and performance dropped noticeably after about 7 trials, so I abandoned it. The second build was a 3D printed fixture with interchangeable dispensing tips, which let me change one variable at a time.
    ![CAD of the fuse fixture from the initial concept](images/dispense-2-build.jpg)
    ![Initial experimental setup: the piston metering chamber on the 3D printed fixture](images/dispense-2-piston.jpg)
+   ![CAD of an interchangeable dispensing tip](images/dispense-2-tip.png)
 4. **Test.** I compared the existing gravity fill with two new approaches over 15 trials each, changing one variable at a time. For every trial, I timed the fill to a target height from video and weighed the fuse before and after. Compaction tapping was done by hand, which I recorded as a known source of variability.
    ![Experimental setup: sand hopper, dispensing tip, and 3D printed fixture](images/dispense-3-tune.jpg)
 5. **Result.** The best approach cut the average fill time from 33.2 s to 20.8 s, a 37% reduction, and made the process more repeatable, with the standard deviation dropping from 1.6 s to 1.0 s. Average fill weight stayed within about 1%. The method and its settings are proprietary to Littelfuse, so they are not described here.
