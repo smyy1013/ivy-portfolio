@@ -16,7 +16,7 @@
 
 ### Littelfuse
 Engineering Intern · May 2026 – Aug 2026
-- Cut fuse sand fill time by 37% with air assisted dispensing, tested over 45 timed trials, and programmed a fill sequence controlled by a load cell on an Arduino Opta PLC.
+- Cut fuse sand fill time by 37% with a new dispensing method, tested over 45 timed trials, and programmed a fill sequence controlled by a load cell on an Arduino Opta PLC.
 - Cut X-ray fixture changeover from 60 s to 12 s with 3D printed fixtures that adjust without tools, refined in weekly reviews with lab technicians.
 - Automated laser labeling with a fixture that holds several fuse families and an Excel VBA tool, so 100 samples are labeled unattended.
 
@@ -56,25 +56,22 @@ Engineering Intern · May 2026 – Aug 2026
 
 ![Sand flowing from the dispensing tip into the 3D printed fixture](images/dispense-cover.jpg)
 
-**Result:** Developed an air assisted sand dispensing method that cut fuse fill time by 37% over 45 timed trials, and automated the fill with load cell feedback on an Arduino Opta PLC.
+**Result:** Developed a new sand dispensing method that cut fuse fill time by 37% over 45 timed trials, and automated the fill with load cell feedback on an Arduino Opta PLC.
 
-**Tools:** Autodesk Inventor, 3D Printing, Pneumatics, Arduino Opta PLC, Load Cell, FEA
+**Tools:** Autodesk Inventor, 3D Printing, Arduino Opta PLC, Load Cell, FEA
 
 1. **Problem.** Many electrical fuses are filled with sand. When a fuse opens, the sand absorbs the heat of the arc and helps put it out, so how evenly it packs affects how the fuse performs. The existing gravity fed process was slow, filled one fuse at a time, and needed a fixture change for every fuse type. My goal was a faster dispensing method that kept fill weight and compaction consistent.
    ![CMV sand fill machine](images/dispense-1-problem.jpg)
    ![Sand fill station with 8 stations](images/dispense-1-station.jpg)
-2. **Thinking.** I started from the assumption that faster filling needed more dispensing force. My first prototype proved that wrong. The nozzle was already wide enough for sand to pass, so force was not what limited the flow. I shifted the design from pushing the sand out to helping it fall, with air assisted gravity dispensing.
+2. **Thinking.** I started from the assumption that faster filling needed more dispensing force. My first prototype proved that wrong. The nozzle was already wide enough for sand to pass, so force was not what limited the flow. I stopped trying to push the sand harder and started looking at how it actually flows into the fuse.
 3. **Build.** The first prototype was a pneumatic piston that metered sand by volume, aiming for ±5% accuracy. The abrasive sand wore down the piston, cylinder, and seals, and performance dropped noticeably after about 7 trials, so I abandoned it. The second build was a 3D printed fixture with interchangeable dispensing tips, which let me change one variable at a time.
    ![CAD of the fuse fixture from the initial concept](images/dispense-2-build.jpg)
    ![Initial experimental setup: the piston metering chamber on the 3D printed fixture](images/dispense-2-piston.jpg)
-   ![CAD of a dispensing tip with its air injection port](images/dispense-2-tip.png)
-4. **Test.** I compared three methods over 15 trials each, gravity only, air injection, and air injection with a weighted block pressing on the sand. I also varied tip geometry and vibration level. For every trial, I timed the fill to a target height from video and weighed the fuse before and after. Compaction tapping was done by hand, which I recorded as a known source of variability.
+4. **Test.** I compared the existing gravity fill with two new approaches over 15 trials each, changing one variable at a time. For every trial, I timed the fill to a target height from video and weighed the fuse before and after. Compaction tapping was done by hand, which I recorded as a known source of variability.
    ![Experimental setup: sand hopper, dispensing tip, and 3D printed fixture](images/dispense-3-tune.jpg)
-5. **Result.** Air injection alone cut the average fill time from 33.2 s to 21.8 s. Adding the weighted block brought it to 20.8 s, a 37% reduction, and made the process more repeatable, with the standard deviation dropping from 1.6 s to 1.0 s. Average fill weight stayed within about 1% (81.3 g to 82.3 g). The process settings are proprietary to Littelfuse and are not listed here.
-   ![Sand flow by gravity alone](images/dispense-4-gravity.jpg)
-   ![Sand flow with air assist](images/dispense-4-air.jpg)
+5. **Result.** The best approach cut the average fill time from 33.2 s to 20.8 s, a 37% reduction, and made the process more repeatable, with the standard deviation dropping from 1.6 s to 1.0 s. Average fill weight stayed within about 1%. The method and its settings are proprietary to Littelfuse, so they are not described here.
 6. **Automation.** To run the process without an operator, I chose delivered mass as the control signal. The fuse has to be weighed to verify the fill anyway, and unlike a timer, a weight reading lets the controller stop exactly when the target is reached. I programmed the fill sequence on an Arduino Opta PLC and read the load cell at 16 bit resolution. At 12 bits, a load cell rated for several kilograms resolves only about a gram per count, which is too coarse for a fill under 100 g. The sequence ran successfully, and I checked the hopper under load in FEA. When the internship ended, the hopper and other mechanical parts had not been fully rebuilt, and the output circuit still needed fuses.
-   ![Control circuit: the load cell signal goes to the PLC, which switches the valves and the vibration motor](images/dispense-2-wiring.png)
+   ![Control circuit: the load cell signal goes to the PLC, which runs the fill sequence](images/dispense-2-wiring.png)
 7. **Takeaway.** Faster filling did not come from more force. Learning that early shaped everything that followed, and the three month timeline taught me to define a scope I could actually finish.
 
 ### Laser labeling automation
